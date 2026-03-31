@@ -86,7 +86,7 @@ export function Services() {
       <SEO 
         title="Services" 
         description="Explore our digital design services. We blend modern design with meaning and functionality to create a digital experience that resonates, and converts."
-        url="https://winterplumdigital.github.io/Winter-Plum-Co./services"
+        url="https://winterplumdigital.github.io/Winter-Plum-Co./#/services"
       />
       {/* Header */}
       <section className="px-6 pt-10 pb-10 text-center relative overflow-hidden min-h-[300px] flex flex-col justify-center">
