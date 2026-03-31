@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { GrowingPlumBranch } from "../components/GrowingPlumBranch";
 import { MountainSunrise } from "../components/MountainSunrise";
 import { Logo } from "../components/Logo";
+import { SEO } from "../components/SEO";
 
 export function Services() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(1);
@@ -82,6 +83,11 @@ export function Services() {
 
   return (
     <main className="min-h-screen pt-24 pb-20">
+      <SEO 
+        title="Services" 
+        description="Explore our digital design services. We blend modern design with meaning and functionality to create a digital experience that resonates, and converts."
+        url="https://winterplumdigital.github.io/services"
+      />
       {/* Header */}
       <section className="px-6 pt-10 pb-10 text-center relative overflow-hidden min-h-[300px] flex flex-col justify-center">
         <MountainSunrise />

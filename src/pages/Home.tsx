@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { PlumBranch } from "../components/PlumBranch";
 import { GrowingPlumBranch } from "../components/GrowingPlumBranch";
+import { SEO } from "../components/SEO";
 
 import { AnimatedPagoda } from "../components/AnimatedPagoda";
 
@@ -104,6 +105,11 @@ export function Home() {
 
   return (
     <main className="min-h-screen pt-20">
+      <SEO 
+        title="Home" 
+        description="Winter Plum Digital creates intentional, strategic digital experiences that help brands grow and leave a lasting legacy."
+        url="https://winterplumdigital.github.io/"
+      />
       {/* Hero Section */}
       <section className="relative px-6 py-32 md:py-48 overflow-hidden flex items-center justify-center text-center">
         {/* Decorative background elements */}

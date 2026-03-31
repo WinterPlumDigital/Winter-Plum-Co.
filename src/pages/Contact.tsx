@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { Mail, Loader2, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import { MountainSunrise } from "../components/MountainSunrise";
+import { SEO } from "../components/SEO";
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -74,6 +75,11 @@ export function Contact() {
 
   return (
     <main className="min-h-screen pt-24 pb-12 relative overflow-hidden">
+      <SEO 
+        title="Contact" 
+        description="Get in touch with Winter Plum Digital. Tell us where you're headed. We'll build the path to get you there."
+        url="https://winterplumdigital.github.io/contact"
+      />
       {/* Background Textures */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blush/20 rounded-full blur-3xl opacity-60 -z-10 translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-sage/10 rounded-full blur-3xl opacity-50 -z-10 -translate-x-1/3 translate-y-1/3" />
