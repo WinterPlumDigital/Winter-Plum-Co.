@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://winterplumdigital.github.io/sitemap.xml
+Sitemap: https://winterplumdigital.github.io/Winter-Plum-Co./sitemap.xml

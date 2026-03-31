@@ -52,7 +52,7 @@ export function Brand() {
       <SEO 
         title="Brand Assets" 
         description="Download Winter Plum Digital brand assets and logos."
-        url="https://winterplumdigital.github.io/brand"
+        url="https://winterplumdigital.github.io/Winter-Plum-Co./brand"
       />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blush/20 rounded-full blur-3xl opacity-60 -z-10 translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-sage/10 rounded-full blur-3xl opacity-50 -z-10 -translate-x-1/3 translate-y-1/3" />

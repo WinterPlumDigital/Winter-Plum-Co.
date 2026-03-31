@@ -13,8 +13,8 @@ export function SEO({
   title,
   description,
   keywords = "web design, branding, digital marketing, strategic growth, intentional design",
-  url = "https://winterplumdigital.github.io",
-  image = "https://winterplumdigital.github.io/og-image.jpg",
+  url = "https://winterplumdigital.github.io/Winter-Plum-Co./",
+  image = "https://winterplumdigital.github.io/Winter-Plum-Co./og-image.jpg",
   type = "website",
 }: SEOProps) {
   const siteTitle = `${title} | Winter Plum Digital`;
@@ -23,14 +23,14 @@ export function SEO({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Winter Plum Digital",
-    "url": "https://winterplumdigital.github.io",
+    "url": "https://winterplumdigital.github.io/Winter-Plum-Co./",
     "description": "We partner with brands that value intentional design and strategic growth.",
     "publisher": {
       "@type": "Organization",
       "name": "Winter Plum Digital",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://winterplumdigital.github.io/logo.png"
+        "url": "https://winterplumdigital.github.io/Winter-Plum-Co./logo.png"
       }
     }
   };
