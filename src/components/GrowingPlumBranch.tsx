@@ -130,6 +130,7 @@ export function GrowingPlumBranch({ className }: { className?: string }) {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       style={{ overflow: "visible" }}
+      aria-hidden="true"
     >
       {/* Branches */}
       <g className="text-mulberry" opacity="0.6">

@@ -44,13 +44,13 @@ export function Contact() {
       // Replace this URL with your deployed Google Apps Script Web App URL
       const scriptUrl = "https://script.google.com/macros/s/AKfycbz8QS75pHh8u1om_mNHaRXZM59gWTo6xlbdLmgbuDD5CLYh-GYwXjqzx4_VaAtSYZ_p/exec";
       
-      if (scriptUrl === "YOUR_GOOGLE_SCRIPT_URL") {
-        // Fallback for testing before you paste the URL
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        setIsSuccess(true);
-        toast.success("Message sent successfully! (Test Mode)");
-        return;
-      }
+      // If you haven't set up the script yet, you can uncomment this for testing:
+      // if (scriptUrl === "YOUR_GOOGLE_SCRIPT_URL") {
+      //   await new Promise(resolve => setTimeout(resolve, 1000));
+      //   setIsSuccess(true);
+      //   toast.success("Message sent successfully! (Test Mode)");
+      //   return;
+      // }
 
       await fetch(scriptUrl, {
         method: "POST",
@@ -76,9 +76,17 @@ export function Contact() {
   return (
     <main className="min-h-screen pt-24 pb-12 relative overflow-hidden">
       <SEO 
-        title="Contact" 
-        description="Get in touch with Winter Plum Digital. Tell us where you're headed. We'll build the path to get you there."
-        url="https://winterplumdigital.github.io/Winter-Plum-Co./#/contact"
+        title="Contact Us" 
+        description="Get in touch with Winter Plum & Co. Tell us about your web design or digital marketing project. We'll build the path to get you there."
+        url="https://winterplum.co/#/contact"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Winter Plum & Co",
+            "description": "Contact form and information for Winter Plum & Co web design studio."
+          }
+        ]}
       />
       {/* Background Textures */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blush/20 rounded-full blur-3xl opacity-60 -z-10 translate-x-1/3 -translate-y-1/3" />
@@ -99,11 +107,11 @@ export function Contact() {
             transition={{ duration: 0.8 }}
             className="flex flex-col justify-center"
           >
-            <h1 className="text-sm uppercase tracking-widest text-sage font-medium mb-4">Get in Touch</h1>
-            <h2 className="text-5xl md:text-6xl font-serif text-ink leading-tight mb-8">
+            <span className="block text-sm uppercase tracking-widest text-sage font-medium mb-4">Get in Touch</span>
+            <h1 className="text-5xl md:text-6xl font-serif text-ink leading-tight mb-8">
               Let's build your <br />
               <span className="text-mulberry">Digital <span className="font-bold">legacy.</span></span>
-            </h2>
+            </h1>
             <p className="text-lg text-ink/70 font-light leading-relaxed mb-12 max-w-md">
               We work with brands that care about how they grow, not just how they look. Tell us where you're headed. We'll build the path to get you there.
             </p>
@@ -114,7 +122,7 @@ export function Contact() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <h3 className="text-sm uppercase tracking-widest text-ink/50 mb-1">Email Us</h3>
+                  <h2 className="text-sm uppercase tracking-widest text-ink/50 mb-1">Email Us</h2>
                   <a href="mailto:winterplum.co@gmail.com" className="text-lg text-ink hover:text-mulberry transition-colors font-serif">
                     winterplum.co@gmail.com
                   </a>
@@ -137,7 +145,7 @@ export function Contact() {
                 <div className="w-20 h-20 bg-sage/20 rounded-full flex items-center justify-center text-sage">
                   <CheckCircle2 size={40} />
                 </div>
-                <h3 className="text-3xl font-serif text-ink">Thank you!</h3>
+                <h2 className="text-3xl font-serif text-ink">Thank you!</h2>
                 <p className="text-lg text-ink/70 font-light">
                   We've received your message and will be in touch with you shortly.
                 </p>

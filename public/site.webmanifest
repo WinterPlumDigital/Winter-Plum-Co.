@@ -1,8 +1,8 @@
 {
-  "name": "Winter Plum Digital",
+  "name": "Winter Plum & Co",
   "short_name": "Winter Plum",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff"
+  "background_color": "#fcf6ee",
+  "theme_color": "#fcf6ee"
 }

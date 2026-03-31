@@ -39,7 +39,7 @@ export function AnimatedPagoda({ className = "" }: { className?: string }) {
 
   return (
     <div className={`w-full h-full flex items-center justify-center ${className}`}>
-      <svg viewBox="0 0 400 500" className="w-full h-full drop-shadow-xl">
+      <svg viewBox="0 0 400 500" className="w-full h-full drop-shadow-xl" aria-hidden="true">
         {/* Layer 0: Zen Lake & Garden */}
         <motion.g custom={0} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={buildUp}>
           {/* Lake */}

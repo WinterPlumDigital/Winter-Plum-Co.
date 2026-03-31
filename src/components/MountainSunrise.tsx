@@ -38,6 +38,7 @@ export function MountainSunrise({ className = "" }: { className?: string }) {
         viewBox="0 0 4000 700"
         className="w-full h-full object-cover object-bottom"
         preserveAspectRatio="xMidYMax slice"
+        aria-hidden="true"
       >
         <defs>
           <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">

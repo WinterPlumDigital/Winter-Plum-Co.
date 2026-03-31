@@ -84,9 +84,20 @@ export function Services() {
   return (
     <main className="min-h-screen pt-24 pb-20">
       <SEO 
-        title="Services" 
-        description="Explore our digital design services. We blend modern design with meaning and functionality to create a digital experience that resonates, and converts."
-        url="https://winterplumdigital.github.io/Winter-Plum-Co./#/services"
+        title="Services & Pricing" 
+        description="Explore our custom web design and digital marketing services. We offer tailored packages, monthly support, and one-off upgrades for growing brands."
+        url="https://winterplum.co/#/services"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Web Design",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Winter Plum & Co"
+            }
+          }
+        ]}
       />
       {/* Header */}
       <section className="px-6 pt-10 pb-10 text-center relative overflow-hidden min-h-[300px] flex flex-col justify-center">
@@ -123,6 +134,7 @@ export function Services() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
+          <h2 className="sr-only">Web Design Packages</h2>
           <motion.div 
             style={{ rotateY, transformStyle: "preserve-3d" }}
             className="flex flex-col lg:flex-row gap-8 items-stretch justify-center"

@@ -107,8 +107,8 @@ export function Home() {
     <main className="min-h-screen pt-20">
       <SEO 
         title="Home" 
-        description="Winter Plum Digital creates intentional, strategic digital experiences that help brands grow and leave a lasting legacy."
-        url="https://winterplumdigital.github.io/Winter-Plum-Co./"
+        description="Winter Plum & Co is a premium web design studio creating custom, conversion-focused websites for small businesses and growing brands."
+        url="https://winterplum.co"
       />
       {/* Hero Section */}
       <section className="relative px-6 py-32 md:py-48 overflow-hidden flex items-center justify-center text-center">
@@ -220,10 +220,10 @@ export function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-sm uppercase tracking-widest text-sage font-medium mb-4">Our Packages</h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-ink leading-tight">
+            <span className="block text-sm uppercase tracking-widest text-sage font-medium mb-4">Our Packages</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-ink leading-tight">
               Tailored to make YOU <span className="text-mulberry font-bold">blossom</span>
-            </h3>
+            </h2>
           </div>
 
           <motion.div 
@@ -251,9 +251,9 @@ export function Home() {
                       {pkg.badge}
                     </div>
                   )}
-                  <h4 className={`text-2xl font-serif mb-2 transition-colors duration-500 ${isActive ? "text-cream" : "text-ink"}`}>
+                  <h3 className={`text-2xl font-serif mb-2 transition-colors duration-500 ${isActive ? "text-cream" : "text-ink"}`}>
                     {pkg.title}
-                  </h4>
+                  </h3>
                   <p className={`text-sm mb-8 h-10 transition-colors duration-500 ${isActive ? "text-cream/70" : "text-ink/60"}`}>
                     {pkg.subtitle}
                   </p>
@@ -292,10 +292,10 @@ export function Home() {
             transition={{ duration: 0.8 }}
             className="lg:pl-12 xl:pl-16"
           >
-            <h2 className="text-sm uppercase tracking-widest text-sage font-medium mb-4">Our Philosophy</h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-ink leading-tight mb-8">
+            <span className="block text-sm uppercase tracking-widest text-sage font-medium mb-4">Our Philosophy</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-ink leading-tight mb-8">
               Built to grow, <br/><span className="font-bold text-mulberry">Designed with Meaning</span>
-            </h3>
+            </h2>
             <p className="text-ink/70 font-light leading-relaxed mb-8 text-lg">
               We believe that your website should not only look good today. It should hold up tomorrow, next season, and years from now. We design with longevity in mind- so your brand evolves alongside you.
             </p>
@@ -350,10 +350,10 @@ export function Home() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-sm uppercase tracking-widest text-blush font-medium mb-4">What We Do</h2>
-            <h3 className="text-4xl md:text-5xl font-serif leading-tight">
+            <span className="block text-sm uppercase tracking-widest text-blush font-medium mb-4">What We Do</span>
+            <h2 className="text-4xl md:text-5xl font-serif leading-tight">
               Crafting Digital <span className="italic text-blush">Experiences</span>
-            </h3>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -385,7 +385,7 @@ export function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-blush/10 flex items-center justify-center text-blush mb-8 group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h4 className="text-2xl font-serif mb-4">{service.title}</h4>
+                <h3 className="text-2xl font-serif mb-4">{service.title}</h3>
                 <p className="text-cream/70 font-light leading-relaxed mb-8">
                   {service.desc}
                 </p>

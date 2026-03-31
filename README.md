@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Winter Plum & Co
 
-# Run and deploy your AI Studio app
+Winter Plum & Co is a premium web design studio creating custom, conversion-focused websites for small businesses and growing brands.
 
-This contains everything you need to run your app locally.
+## Development
 
-View your app in AI Studio: https://ai.studio/apps/c8ab294f-dfef-470a-93ff-7a399c35b24a
+This project is built with React, Vite, Tailwind CSS, and Framer Motion.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
+### Setup
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Deployment
+
+This site is configured for deployment on GitHub Pages. The build output is configured to use relative paths for assets, ensuring compatibility with subfolder deployments.
+
+## SEO & Performance
+
+- **Semantic HTML**: Proper use of `<main>`, `<section>`, `<nav>`, `<header>`, `<footer>`, and heading hierarchy (`<h1>` - `<h6>`).
+- **Structured Data**: JSON-LD schema markup (`Organization`, `WebSite`, `ProfessionalService`, `Service`, `ContactPage`) is injected dynamically per page.
+- **Metadata**: Unique `<title>`, `<meta name="description">`, canonical URLs, and Open Graph/Twitter tags for every page.
+- **Accessibility**: ARIA labels on interactive elements, `aria-hidden` on decorative SVGs, and sufficient color contrast.
+- **Performance**: Optimized animations using Framer Motion, lazy loading where appropriate, and lightweight SVG assets.

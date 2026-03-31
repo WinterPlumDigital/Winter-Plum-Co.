@@ -7,33 +7,51 @@ interface SEOProps {
   url?: string;
   image?: string;
   type?: string;
+  schema?: Record<string, any>[];
 }
 
 export function SEO({
   title,
   description,
-  keywords = "web design, branding, digital marketing, strategic growth, intentional design",
-  url = "https://winterplumdigital.github.io/Winter-Plum-Co./",
-  image = "https://winterplumdigital.github.io/Winter-Plum-Co./og-image.jpg",
+  keywords = "custom website design, website redesign services, modern business websites, conversion-focused web design, digital agency for growing brands",
+  url = "https://winterplum.co",
+  image = "https://winterplum.co/og-image.jpg",
   type = "website",
+  schema = [],
 }: SEOProps) {
-  const siteTitle = `${title} | Winter Plum Digital`;
+  const siteTitle = title === "Home" ? "Winter Plum & Co | Premium Web Design Studio" : `${title} | Winter Plum & Co`;
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Winter Plum Digital",
-    "url": "https://winterplumdigital.github.io/Winter-Plum-Co./",
-    "description": "We partner with brands that value intentional design and strategic growth.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Winter Plum Digital",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://winterplumdigital.github.io/Winter-Plum-Co./logo.png"
+  const baseStructuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Winter Plum & Co",
+      "url": "https://winterplum.co",
+      "description": "Premium web design studio and digital agency specializing in custom website design, redesigns, and conversion-focused digital experiences for growing brands.",
+      "image": "https://winterplum.co/og-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$$"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Winter Plum & Co",
+      "url": "https://winterplum.co",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Winter Plum & Co",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://winterplum.co/logo.png"
+        }
       }
     }
-  };
+  ];
+
+  const finalSchema = [...baseStructuredData, ...schema];
 
   return (
     <Helmet>
@@ -41,6 +59,8 @@ export function SEO({
       <title>{siteTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="author" content="Winter Plum & Co" />
+      <meta name="theme-color" content="#f7f4ef" />
 
       {/* Open Graph tags (Facebook, LinkedIn, etc.) */}
       <meta property="og:title" content={siteTitle} />
@@ -48,7 +68,7 @@ export function SEO({
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       {image && <meta property="og:image" content={image} />}
-      <meta property="og:site_name" content="Winter Plum Digital" />
+      <meta property="og:site_name" content="Winter Plum & Co" />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -60,9 +80,11 @@ export function SEO({
       <link rel="canonical" href={url} />
 
       {/* Structured Data (JSON-LD) for Google */}
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+      {finalSchema.map((data, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(data)}
+        </script>
+      ))}
     </Helmet>
   );
 }

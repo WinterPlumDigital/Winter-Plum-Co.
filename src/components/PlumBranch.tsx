@@ -37,6 +37,7 @@ export function PlumBranch({ className }: { className?: string }) {
       style={{ originX: 0, originY: 0, overflow: "visible" }}
       variants={branchSway}
       animate="animate"
+      aria-hidden="true"
     >
       {/* Wind gusts */}
       <g className="text-mulberry/40">

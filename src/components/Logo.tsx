@@ -5,7 +5,7 @@ export const Logo = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>((props, r
   const maskId = "logo-mask-" + rawId.replace(/:/g, "");
 
   return (
-    <svg ref={ref} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg ref={ref} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {...props}>
       <defs>
         <mask id={maskId}>
           {/* White background means keep everything by default */}
