@@ -1,0 +1,8 @@
+{
+  "name": "Winter Plum Digital",
+  "short_name": "Winter Plum",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
