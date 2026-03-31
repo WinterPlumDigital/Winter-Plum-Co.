@@ -7,6 +7,7 @@ import { Home } from "./pages/Home";
 import { Services } from "./pages/Services";
 import { Contact } from "./pages/Contact";
 import { Brand } from "./pages/Brand";
+import { WebDesignSanJose } from "./pages/WebDesignSanJose";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/brand" element={<Brand />} />
+            <Route path="/web-design-san-jose" element={<WebDesignSanJose />} />
           </Routes>
         </div>
         <Footer />

@@ -395,6 +395,12 @@ export function Home() {
               </motion.div>
             ))}
           </div>
+
+          <div className="mt-20 pt-8 border-t border-cream/10 text-center text-sm text-cream/60">
+            <p>
+              We work with growing businesses across the Bay Area. Looking for <Link to="/web-design-san-jose" className="underline hover:text-cream transition-colors">web design in San Jose</Link>? Learn more here.
+            </p>
+          </div>
         </div>
       </section>
     </main>

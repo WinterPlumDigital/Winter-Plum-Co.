@@ -31,6 +31,48 @@ const ChineseCloud2 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = false }
   </g>
 );
 
+const MovingCloud1 = ({ y, scale = 1, opacity = 1, duration = 60, delay = 0, flip = false }: { y: number, scale?: number, opacity?: number, duration?: number, delay?: number, flip?: boolean }) => (
+  <motion.g
+    initial={{ x: -800 }}
+    animate={{ x: 4800 }}
+    transition={{ duration, repeat: Infinity, ease: "linear", delay }}
+  >
+    <g transform={`translate(0, ${y}) scale(${scale * (flip ? -1 : 1)}, ${scale})`}>
+      <motion.g
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0, opacity, opacity, 0] }}
+        transition={{ duration, repeat: Infinity, ease: "linear", delay, times: [0, 0.05, 0.95, 1] }}
+      >
+        <path d="M -100,20 L 100,20 C 130,20 140,-10 110,-20 C 100,-23 90,-20 80,-15 C 80,-50 20,-60 -10,-30 C -20,-50 -60,-50 -80,-20 C -110,-10 -120,20 -100,20 Z" fill="#f7f4ef" stroke="#a3b1a9" strokeWidth="6" strokeLinejoin="round" />
+        <path d="M 110,-20 C 90,-27 70,-15 70,0 C 70,10 80,15 90,15 C 100,15 105,10 105,5 C 105,0 100,-5 95,-5" fill="none" stroke="#a3b1a9" strokeWidth="6" strokeLinecap="round" />
+        <path d="M -10,-30 C 10,-10 0,10 -20,15 C -30,17 -40,10 -40,0 C -40,-10 -30,-15 -20,-15" fill="none" stroke="#a3b1a9" strokeWidth="6" strokeLinecap="round" />
+        <path d="M -80,-20 C -60,-10 -50,0 -60,10" fill="none" stroke="#a3b1a9" strokeWidth="6" strokeLinecap="round" />
+      </motion.g>
+    </g>
+  </motion.g>
+);
+
+const MovingCloud2 = ({ y, scale = 1, opacity = 1, duration = 60, delay = 0, flip = false }: { y: number, scale?: number, opacity?: number, duration?: number, delay?: number, flip?: boolean }) => (
+  <motion.g
+    initial={{ x: -800 }}
+    animate={{ x: 4800 }}
+    transition={{ duration, repeat: Infinity, ease: "linear", delay }}
+  >
+    <g transform={`translate(0, ${y}) scale(${scale * (flip ? -1 : 1)}, ${scale})`}>
+      <motion.g
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0, opacity, opacity, 0] }}
+        transition={{ duration, repeat: Infinity, ease: "linear", delay, times: [0, 0.05, 0.95, 1] }}
+      >
+        <path d="M -60,15 L 60,15 C 80,15 90,-5 70,-15 C 60,-20 50,-15 40,-10 C 30,-35 -10,-40 -30,-20 C -40,-30 -70,-25 -80,-10 C -100,-5 -90,15 -60,15 Z" fill="#f7f4ef" stroke="#a3b1a9" strokeWidth="6" strokeLinejoin="round" />
+        <path d="M 70,-15 C 50,-20 40,-5 40,5 C 40,10 50,12 55,8" fill="none" stroke="#a3b1a9" strokeWidth="6" strokeLinecap="round" />
+        <path d="M -30,-20 C -10,-10 -15,5 -30,10" fill="none" stroke="#a3b1a9" strokeWidth="6" strokeLinecap="round" />
+        <path d="M -80,-10 C -65,-5 -60,5 -70,10" fill="none" stroke="#a3b1a9" strokeWidth="6" strokeLinecap="round" />
+      </motion.g>
+    </g>
+  </motion.g>
+);
+
 export function MountainSunrise({ className = "" }: { className?: string }) {
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none z-0 ${className}`}>
@@ -113,6 +155,22 @@ export function MountainSunrise({ className = "" }: { className?: string }) {
         <ChineseCloud2 x={2300} y={500} scale={1.1} opacity={0.6} delay={0.8} flip />
         <ChineseCloud1 x={2500} y={630} scale={1.6} opacity={0.8} delay={1.0} />
         <ChineseCloud2 x={2800} y={570} scale={1.2} opacity={0.7} delay={1.2} />
+        
+        {/* High Clouds */}
+        <ChineseCloud1 x={1500} y={200} scale={1.4} opacity={0.5} delay={1.3} />
+        <ChineseCloud2 x={1900} y={100} scale={1.1} opacity={0.4} delay={1.5} flip />
+        <ChineseCloud1 x={2300} y={150} scale={1.3} opacity={0.5} delay={1.4} />
+        <ChineseCloud2 x={2700} y={250} scale={1.5} opacity={0.6} delay={1.6} />
+
+        {/* Moving Clouds */}
+        <MovingCloud1 y={150} scale={1.8} opacity={0.4} duration={120} delay={0} />
+        <MovingCloud2 y={250} scale={1.2} opacity={0.5} duration={90} delay={15} flip />
+        <MovingCloud1 y={450} scale={2.5} opacity={0.3} duration={150} delay={30} />
+        <MovingCloud2 y={350} scale={1.5} opacity={0.6} duration={100} delay={45} />
+        <MovingCloud1 y={100} scale={1.0} opacity={0.5} duration={80} delay={60} flip />
+        <MovingCloud2 y={550} scale={2.0} opacity={0.4} duration={140} delay={10} />
+        <MovingCloud1 y={200} scale={1.4} opacity={0.6} duration={110} delay={75} />
+        <MovingCloud2 y={400} scale={1.8} opacity={0.3} duration={130} delay={25} flip />
 
         {/* Fog Overlay to blend into the background */}
         <rect x="-1000" y="400" width="6000" height="300" fill="url(#fog)" />
