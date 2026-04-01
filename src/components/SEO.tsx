@@ -108,9 +108,9 @@ export function SEO({
       <link rel="canonical" href={url} />
 
       {/* Favicon links */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="apple-touch-icon" href="/favicon.svg" />
-      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+      <link rel="apple-touch-icon" href="favicon.svg" />
+      <link rel="manifest" href="site.webmanifest" />
 
       {/* Structured Data (JSON-LD) for Google */}
       {finalSchema.map((data, index) => (
