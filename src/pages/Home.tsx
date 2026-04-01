@@ -6,6 +6,7 @@ import { Logo } from "../components/Logo";
 import { PlumBranch } from "../components/PlumBranch";
 import { GrowingPlumBranch } from "../components/GrowingPlumBranch";
 import { SEO } from "../components/SEO";
+import { ChineseCloud1, ChineseCloud2, MovingCloud1, MovingCloud2 } from "../components/MountainSunrise";
 
 import { AnimatedPagoda } from "../components/AnimatedPagoda";
 
@@ -282,6 +283,29 @@ export function Home() {
         </div>
       </section>
 
+      {/* Cloud Transition Section */}
+      <div className="relative h-96 -my-48 z-20 pointer-events-none overflow-hidden bg-gradient-to-b from-transparent via-cream/40 to-transparent">
+        <svg viewBox="0 0 4000 600" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+          <MovingCloud1 y={150} scale={2.5} opacity={0.6} duration={80} blur={4} />
+          <MovingCloud2 y={300} scale={3.5} opacity={0.5} duration={100} delay={5} blur={2} />
+          <MovingCloud1 y={450} scale={2.2} opacity={0.7} duration={70} delay={10} flip blur={3} />
+          
+          <ChineseCloud1 x={400} y={200} scale={1.8} opacity={0.6} delay={0.5} blur={1} />
+          <ChineseCloud2 x={1200} y={400} scale={2.0} opacity={0.5} delay={1} flip blur={2} />
+          <ChineseCloud1 x={2200} y={150} scale={1.6} opacity={0.7} delay={1.5} blur={1} />
+          <ChineseCloud2 x={3200} y={300} scale={2.2} opacity={0.6} delay={2} blur={3} />
+          
+          <ChineseCloud1 x={800} y={500} scale={1.8} opacity={0.5} delay={2.5} blur={2} />
+          <ChineseCloud2 x={1800} y={200} scale={1.6} opacity={0.6} delay={3} flip blur={1} />
+          <ChineseCloud1 x={2800} y={450} scale={2.0} opacity={0.5} delay={3.5} blur={2} />
+          
+          {/* Extra clouds for more density */}
+          <ChineseCloud1 x={1500} y={300} scale={1.9} opacity={0.6} delay={4} blur={2} />
+          <ChineseCloud2 x={2500} y={200} scale={1.7} opacity={0.5} delay={4.5} flip blur={1} />
+          <ChineseCloud1 x={3600} y={400} scale={2.1} opacity={0.6} delay={5} blur={3} />
+        </svg>
+      </div>
+
       {/* Philosophy / Approach */}
       <section className="px-6 py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -398,7 +422,7 @@ export function Home() {
 
           <div className="mt-20 pt-8 border-t border-cream/10 text-center text-sm text-cream/60">
             <p>
-              We work with growing businesses across the Bay Area. Looking for <Link to="/web-design-san-jose" className="underline hover:text-cream transition-colors">web design in San Jose</Link>? Learn more here.
+              We work with growing businesses across the Bay Area. Looking for <Link to="/web-design-silicon-valley" className="underline hover:text-cream transition-colors">web design in the Silicon Valley</Link> or <Link to="/web-design-san-jose" className="underline hover:text-cream transition-colors">San Jose</Link>? Learn more here.
             </p>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { Logo } from "./Logo";
 const links = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
+  { name: "FAQ", path: "/faq" },
   { name: "Contact", path: "/contact" },
 ];
 

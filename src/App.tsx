@@ -7,7 +7,9 @@ import { Home } from "./pages/Home";
 import { Services } from "./pages/Services";
 import { Contact } from "./pages/Contact";
 import { Brand } from "./pages/Brand";
+import { WebDesignSiliconValley } from "./pages/WebDesignSiliconValley";
 import { WebDesignSanJose } from "./pages/WebDesignSanJose";
+import { FAQ } from "./pages/FAQ";
 
 export default function App() {
   return (
@@ -23,7 +25,9 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/brand" element={<Brand />} />
+            <Route path="/web-design-silicon-valley" element={<WebDesignSiliconValley />} />
             <Route path="/web-design-san-jose" element={<WebDesignSanJose />} />
+            <Route path="/faq" element={<FAQ />} />
           </Routes>
         </div>
         <Footer />

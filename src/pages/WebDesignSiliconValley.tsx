@@ -4,14 +4,14 @@ import { SEO } from "../components/SEO";
 import { MountainSunrise } from "../components/MountainSunrise";
 import { Logo } from "../components/Logo";
 
-export function WebDesignSanJose() {
+export function WebDesignSiliconValley() {
   const { scrollYProgress } = useScroll();
 
   // Parallax effect: mountain starts at the top (peaks) and moves up to show the base at the bottom
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0vh", "-100vh"]);
   const backgroundOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.3]);
 
-  const sanJoseSchema = [
+  const siliconValleySchema = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -21,26 +21,26 @@ export function WebDesignSanJose() {
         "name": "Winter Plum & Co",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Jose",
+          "addressLocality": "Silicon Valley",
           "addressRegion": "CA"
         }
       },
       "areaServed": {
         "@type": "City",
-        "name": "San Jose"
+        "name": "Silicon Valley"
       },
-      "description": "Premium web design and development services for businesses in San Jose and the Bay Area."
+      "description": "Premium web design and development services for businesses in the Silicon Valley and the Bay Area."
     }
   ];
 
   return (
     <div className="relative min-h-screen">
       <SEO
-        title="Web Design San Jose | Custom Websites | Winter Plum & Co"
-        description="Elevate your brand with premium web design in San Jose. Winter Plum & Co builds custom, conversion-focused websites for growing Bay Area businesses."
-        keywords="web design San Jose, San Jose web designer, custom websites San Jose, Bay Area web design, SEO optimized web design, digital agency San Jose"
-        url="https://winterplum.co/#/web-design-san-jose"
-        schema={sanJoseSchema}
+        title="Web Design Silicon Valley | Custom Websites | Winter Plum & Co"
+        description="Elevate your brand with premium web design in the Silicon Valley. Winter Plum & Co builds custom, conversion-focused websites for growing Bay Area businesses."
+        keywords="web design Silicon Valley, Silicon Valley web designer, custom websites Silicon Valley, Bay Area web design, SEO optimized web design, digital agency Silicon Valley"
+        url="https://winterplum.co/#/web-design-silicon-valley"
+        schema={siliconValleySchema}
       />
 
       {/* Fixed Parallax Background */}
@@ -66,7 +66,7 @@ export function WebDesignSanJose() {
               transition={{ duration: 0.8 }}
               className="inline-block mb-6 px-4 py-1.5 rounded-full border border-ink/10 bg-cream/50 backdrop-blur-sm text-sm uppercase tracking-widest text-ink/70"
             >
-              San Jose & The Bay Area
+              Silicon Valley & The Bay Area
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export function WebDesignSanJose() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-5xl md:text-7xl font-serif font-bold text-ink leading-tight mb-6"
             >
-              Web Design in <span className="text-mulberry">San Jose</span>
+              Web Design in the <span className="text-mulberry">Silicon Valley</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ export function WebDesignSanJose() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-ink/70 max-w-2xl mx-auto leading-relaxed"
             >
-              We design high-converting, custom websites for ambitious brands across San Jose and the Bay Area.
+              We design high-converting, custom websites for ambitious brands across the Silicon Valley and the Bay Area.
             </motion.p>
           </header>
 
@@ -96,7 +96,7 @@ export function WebDesignSanJose() {
             >
               <h2 className="text-3xl font-serif text-ink mb-6">Elevating Bay Area Brands Through Strategic Design</h2>
               <p>
-                San Jose is a global hub of innovation. In this competitive landscape, your digital presence must captivate and convert. We specialize in premium web design, blending modern aesthetics with rigorous technical SEO to ensure your site performs flawlessly.
+                The Silicon Valley is a global hub of innovation. In this competitive landscape, your digital presence must captivate and convert. We specialize in premium web design, blending modern aesthetics with rigorous technical SEO to ensure your site performs flawlessly.
               </p>
             </motion.section>
 
@@ -198,7 +198,7 @@ export function WebDesignSanJose() {
             >
               <h2 className="text-3xl font-serif text-ink mb-6">Who We Work With</h2>
               <p>
-                We proudly partner with small businesses, creative professionals, and ambitious founders across San Jose and the Bay Area, translating your vision into a compelling online reality.
+                We proudly partner with small businesses, creative professionals, and ambitious founders across the Silicon Valley and the Bay Area, translating your vision into a compelling online reality.
               </p>
             </motion.section>
 

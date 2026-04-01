@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-cream py-20 px-6 mt-auto">
+    <footer className="bg-ink text-cream py-20 px-6 mt-auto relative z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
           <Link to="/" className="text-3xl font-serif font-medium text-blush flex items-center gap-2 mb-6">
@@ -16,14 +16,15 @@ export function Footer() {
         </div>
         
         <div className="flex flex-col gap-4">
-          <h2 className="text-sm uppercase tracking-widest text-sage font-medium mb-2">Navigation</h2>
+          <h2 className="text-sm uppercase tracking-widest text-sage font-serif font-medium mb-2">Navigation</h2>
           <Link to="/" className="text-cream/60 hover:text-blush transition-colors">Home</Link>
           <Link to="/services" className="text-cream/60 hover:text-blush transition-colors">Services</Link>
+          <Link to="/faq" className="text-cream/60 hover:text-blush transition-colors">FAQ</Link>
           <Link to="/contact" className="text-cream/60 hover:text-blush transition-colors">Contact</Link>
         </div>
 
         <div className="flex flex-col gap-4">
-          <h2 className="text-sm uppercase tracking-widest text-sage font-medium mb-2">Contact</h2>
+          <h2 className="text-sm uppercase tracking-widest text-sage font-serif font-medium mb-2">Contact</h2>
           <p className="text-cream/60 mt-4 text-sm">winterplum.co@gmail.com</p>
         </div>
       </div>

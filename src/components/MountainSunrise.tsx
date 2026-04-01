@@ -1,12 +1,20 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-const ChineseCloud1 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = false }: { x: number, y: number, scale?: number, opacity?: number, delay?: number, flip?: boolean }) => (
-  <g transform={`translate(${x}, ${y}) scale(${scale * (flip ? -1 : 1)}, ${scale})`}>
+export const ChineseCloud1 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = false, blur = 0 }: { x: number, y: number, scale?: number, opacity?: number, delay?: number, flip?: boolean, blur?: number }) => (
+  <g transform={`translate(${x}, ${y}) scale(${scale * (flip ? -1 : 1)}, ${scale})`} style={{ filter: blur > 0 ? `blur(${blur}px)` : 'none' }}>
     <motion.g
       initial={{ x: -50, opacity: 0 }}
-      animate={{ x: 0, opacity }}
-      transition={{ duration: 2, ease: "easeOut", delay }}
+      animate={{ 
+        x: 0, 
+        opacity,
+        y: [0, -10, 0]
+      }}
+      transition={{ 
+        x: { duration: 2, ease: "easeOut", delay },
+        opacity: { duration: 2, ease: "easeOut", delay },
+        y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay }
+      }}
     >
       <path d="M -100,20 L 100,20 C 130,20 140,-10 110,-20 C 100,-23 90,-20 80,-15 C 80,-50 20,-60 -10,-30 C -20,-50 -60,-50 -80,-20 C -110,-10 -120,20 -100,20 Z" fill="#f7f4ef" stroke="#a3b1a9" strokeWidth="6" strokeLinejoin="round" />
       <path d="M 110,-20 C 90,-27 70,-15 70,0 C 70,10 80,15 90,15 C 100,15 105,10 105,5 C 105,0 100,-5 95,-5" fill="none" stroke="#a3b1a9" strokeWidth="6" strokeLinecap="round" />
@@ -16,12 +24,20 @@ const ChineseCloud1 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = false }
   </g>
 );
 
-const ChineseCloud2 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = false }: { x: number, y: number, scale?: number, opacity?: number, delay?: number, flip?: boolean }) => (
-  <g transform={`translate(${x}, ${y}) scale(${scale * (flip ? -1 : 1)}, ${scale})`}>
+export const ChineseCloud2 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = false, blur = 0 }: { x: number, y: number, scale?: number, opacity?: number, delay?: number, flip?: boolean, blur?: number }) => (
+  <g transform={`translate(${x}, ${y}) scale(${scale * (flip ? -1 : 1)}, ${scale})`} style={{ filter: blur > 0 ? `blur(${blur}px)` : 'none' }}>
     <motion.g
       initial={{ x: -50, opacity: 0 }}
-      animate={{ x: 0, opacity }}
-      transition={{ duration: 2, ease: "easeOut", delay }}
+      animate={{ 
+        x: 0, 
+        opacity,
+        y: [0, -10, 0]
+      }}
+      transition={{ 
+        x: { duration: 2, ease: "easeOut", delay },
+        opacity: { duration: 2, ease: "easeOut", delay },
+        y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay }
+      }}
     >
       <path d="M -60,15 L 60,15 C 80,15 90,-5 70,-15 C 60,-20 50,-15 40,-10 C 30,-35 -10,-40 -30,-20 C -40,-30 -70,-25 -80,-10 C -100,-5 -90,15 -60,15 Z" fill="#f7f4ef" stroke="#a3b1a9" strokeWidth="6" strokeLinejoin="round" />
       <path d="M 70,-15 C 50,-20 40,-5 40,5 C 40,10 50,12 55,8" fill="none" stroke="#a3b1a9" strokeWidth="6" strokeLinecap="round" />
@@ -31,11 +47,12 @@ const ChineseCloud2 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = false }
   </g>
 );
 
-const MovingCloud1 = ({ y, scale = 1, opacity = 1, duration = 60, delay = 0, flip = false }: { y: number, scale?: number, opacity?: number, duration?: number, delay?: number, flip?: boolean }) => (
+export const MovingCloud1 = ({ y, scale = 1, opacity = 1, duration = 60, delay = 0, flip = false, blur = 0 }: { y: number, scale?: number, opacity?: number, duration?: number, delay?: number, flip?: boolean, blur?: number }) => (
   <motion.g
     initial={{ x: -800 }}
     animate={{ x: 4800 }}
     transition={{ duration, repeat: Infinity, ease: "linear", delay }}
+    style={{ filter: blur > 0 ? `blur(${blur}px)` : 'none' }}
   >
     <g transform={`translate(0, ${y}) scale(${scale * (flip ? -1 : 1)}, ${scale})`}>
       <motion.g
@@ -52,11 +69,12 @@ const MovingCloud1 = ({ y, scale = 1, opacity = 1, duration = 60, delay = 0, fli
   </motion.g>
 );
 
-const MovingCloud2 = ({ y, scale = 1, opacity = 1, duration = 60, delay = 0, flip = false }: { y: number, scale?: number, opacity?: number, duration?: number, delay?: number, flip?: boolean }) => (
+export const MovingCloud2 = ({ y, scale = 1, opacity = 1, duration = 60, delay = 0, flip = false, blur = 0 }: { y: number, scale?: number, opacity?: number, duration?: number, delay?: number, flip?: boolean, blur?: number }) => (
   <motion.g
     initial={{ x: -800 }}
     animate={{ x: 4800 }}
     transition={{ duration, repeat: Infinity, ease: "linear", delay }}
+    style={{ filter: blur > 0 ? `blur(${blur}px)` : 'none' }}
   >
     <g transform={`translate(0, ${y}) scale(${scale * (flip ? -1 : 1)}, ${scale})`}>
       <motion.g
