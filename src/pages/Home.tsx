@@ -108,8 +108,28 @@ export function Home() {
     <main className="min-h-screen pt-20">
       <SEO 
         title="Home" 
-        description="Winter Plum & Co is a premium web design studio creating custom, conversion-focused websites for small businesses and growing brands."
+        description="Winter Plum & Co is a premium web design studio based in San Jose, CA. We create custom, conversion-focused websites for small businesses and growing brands in Silicon Valley and beyond."
         url="https://winterplum.co"
+        keywords="web design San Jose, custom website design Silicon Valley, conversion-focused web design, premium web design studio, small business websites, modern digital agency"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Winter Plum & Co | Premium Web Design Studio",
+            "description": "Custom web design and digital strategy for growing brands.",
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://winterplum.co"
+                }
+              ]
+            }
+          }
+        ]}
       />
       {/* Hero Section */}
       <section className="relative px-6 py-32 md:py-48 overflow-hidden flex items-center justify-center text-center">

@@ -36,11 +36,31 @@ export function WebDesignSiliconValley() {
   return (
     <div className="relative min-h-screen">
       <SEO
-        title="Web Design Silicon Valley | Custom Websites | Winter Plum & Co"
-        description="Elevate your brand with premium web design in the Silicon Valley. Winter Plum & Co builds custom, conversion-focused websites for growing Bay Area businesses."
-        keywords="web design Silicon Valley, Silicon Valley web designer, custom websites Silicon Valley, Bay Area web design, SEO optimized web design, digital agency Silicon Valley"
+        title="Web Design Silicon Valley | Custom Websites"
+        description="Elevate your brand with premium web design in Silicon Valley. Winter Plum & Co builds custom, conversion-focused websites for growing Bay Area businesses. Expert Silicon Valley web designer."
+        keywords="web design Silicon Valley, Silicon Valley web designer, custom websites Silicon Valley, Bay Area web design, SEO optimized web design, digital agency Silicon Valley, tech company web design"
         url="https://winterplum.co/#/web-design-silicon-valley"
-        schema={siliconValleySchema}
+        schema={[
+          ...siliconValleySchema,
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://winterplum.co"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Web Design Silicon Valley",
+                "item": "https://winterplum.co/#/web-design-silicon-valley"
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Fixed Parallax Background */}

@@ -86,9 +86,10 @@ export function FAQ() {
   return (
     <main className="min-h-screen pt-40 relative overflow-hidden">
       <SEO
-        title="Frequently Asked Questions | Winter Plum & Co"
-        description="Find answers to common questions about our web design process, pricing, SEO services, and ongoing support."
+        title="Frequently Asked Questions"
+        description="Find answers to common questions about our web design process, pricing, SEO services, and ongoing support for businesses in San Jose and the Bay Area."
         url="https://winterplum.co/#/faq"
+        keywords="web design FAQ, website pricing San Jose, SEO questions, digital agency support, web design process, Bay Area web design studio"
         schema={[faqSchema]}
       />
       

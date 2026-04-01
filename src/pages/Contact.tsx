@@ -77,14 +77,25 @@ export function Contact() {
     <main className="min-h-screen pt-24 pb-12 relative overflow-hidden">
       <SEO 
         title="Contact Us" 
-        description="Get in touch with Winter Plum & Co. Tell us about your web design or digital marketing project. We'll build the path to get you there."
+        description="Get in touch with Winter Plum & Co. Tell us about your web design or digital marketing project. We're ready to help your brand blossom in San Jose and beyond."
         url="https://winterplum.co/#/contact"
+        keywords="contact web designer, hire web design agency San Jose, digital marketing consultation, website project inquiry, Bay Area web design studio"
         schema={[
           {
             "@context": "https://schema.org",
             "@type": "ContactPage",
             "name": "Contact Winter Plum & Co",
-            "description": "Contact form and information for Winter Plum & Co web design studio."
+            "description": "Contact form and information for Winter Plum & Co web design studio.",
+            "mainEntity": {
+              "@type": "ProfessionalService",
+              "name": "Winter Plum & Co",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "San Jose",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+              }
+            }
           }
         ]}
       />

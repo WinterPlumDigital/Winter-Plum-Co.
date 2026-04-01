@@ -36,11 +36,31 @@ export function WebDesignSanJose() {
   return (
     <div className="relative min-h-screen">
       <SEO
-        title="Web Design San Jose | Custom Websites | Winter Plum & Co"
-        description="Elevate your brand with premium web design in San Jose. Winter Plum & Co builds custom, conversion-focused websites for growing Bay Area businesses."
-        keywords="web design San Jose, San Jose web designer, custom websites San Jose, Bay Area web design, SEO optimized web design, digital agency San Jose"
+        title="Web Design San Jose | Custom Websites"
+        description="Elevate your brand with premium web design in San Jose. Winter Plum & Co builds custom, conversion-focused websites for growing Bay Area businesses. Expert San Jose web designer."
+        keywords="web design San Jose, San Jose web designer, custom websites San Jose, Bay Area web design, SEO optimized web design, digital agency San Jose, website redesign San Jose"
         url="https://winterplum.co/#/web-design-san-jose"
-        schema={sanJoseSchema}
+        schema={[
+          ...sanJoseSchema,
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://winterplum.co"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Web Design San Jose",
+                "item": "https://winterplum.co/#/web-design-san-jose"
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Fixed Parallax Background */}

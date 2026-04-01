@@ -8,16 +8,18 @@ interface SEOProps {
   image?: string;
   type?: string;
   schema?: Record<string, any>[];
+  noindex?: boolean;
 }
 
 export function SEO({
   title,
   description,
-  keywords = "custom website design, website redesign services, modern business websites, conversion-focused web design, digital agency for growing brands",
+  keywords = "custom website design, website redesign services, modern business websites, conversion-focused web design, digital agency for growing brands, San Jose web design, Silicon Valley digital agency",
   url = "https://winterplum.co",
   image = "https://winterplum.co/og-image.jpg",
   type = "website",
   schema = [],
+  noindex = false,
 }: SEOProps) {
   const siteTitle = title === "Home" ? "Winter Plum & Co | Premium Web Design Studio" : `${title} | Winter Plum & Co`;
 
@@ -27,13 +29,36 @@ export function SEO({
       "@type": "ProfessionalService",
       "name": "Winter Plum & Co",
       "url": "https://winterplum.co",
+      "logo": "https://winterplum.co/logo.png",
       "description": "Premium web design studio and digital agency specializing in custom website design, redesigns, and conversion-focused digital experiences for growing brands.",
       "image": "https://winterplum.co/og-image.jpg",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "San Jose",
+        "addressRegion": "CA",
         "addressCountry": "US"
       },
-      "priceRange": "$$$"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.3382,
+        "longitude": -121.8863
+      },
+      "priceRange": "$$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/winter-plum-co"
+      ]
     },
     {
       "@context": "https://schema.org",
@@ -61,6 +86,7 @@ export function SEO({
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="author" content="Winter Plum & Co" />
       <meta name="theme-color" content="#f7f4ef" />
+      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
 
       {/* Open Graph tags (Facebook, LinkedIn, etc.) */}
       <meta property="og:title" content={siteTitle} />
@@ -68,6 +94,8 @@ export function SEO({
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       {image && <meta property="og:image" content={image} />}
+      {image && <meta property="og:image:width" content="1200" />}
+      {image && <meta property="og:image:height" content="630" />}
       <meta property="og:site_name" content="Winter Plum & Co" />
 
       {/* Twitter Card tags */}
