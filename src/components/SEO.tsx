@@ -13,7 +13,7 @@ interface SEOProps {
 
 export function SEO({
   title,
-  description,
+  description = "We create SEO-powered websites that look professional, attract customers, stay visible on Google, and turn visitors into customers.",
   keywords = "custom website design, website redesign services, modern business websites, conversion-focused web design, digital agency for growing brands, San Jose web design, Silicon Valley digital agency",
   url = "https://winterplum.co",
   image = "https://winterplum.co/og-image.jpg",
@@ -106,6 +106,11 @@ export function SEO({
 
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
+
+      {/* Favicon links */}
+      <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+      <link rel="apple-touch-icon" href="favicon.svg" />
+      <link rel="manifest" href="site.webmanifest" />
 
       {/* Structured Data (JSON-LD) for Google */}
       {finalSchema.map((data, index) => (
