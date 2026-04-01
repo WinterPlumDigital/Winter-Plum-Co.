@@ -108,7 +108,7 @@ export function Home() {
     <main className="min-h-screen pt-20">
       <SEO 
         title="Home" 
-        description="Winter Plum & Co is a premium web design studio based in San Jose, CA. We create custom, conversion-focused websites for small businesses and growing brands in Silicon Valley and beyond."
+        description="We create SEO-powered websites that look professional, attract customers, stay visible on Google, and turn visitors into customers."
         url="https://winterplum.co"
         keywords="web design San Jose, custom website design Silicon Valley, conversion-focused web design, premium web design studio, small business websites, modern digital agency"
         schema={[
