@@ -306,23 +306,23 @@ export function Home() {
       {/* Cloud Transition Section */}
       <div className="relative h-96 -my-48 z-20 pointer-events-none overflow-hidden bg-gradient-to-b from-transparent via-cream/40 to-transparent">
         <svg viewBox="0 0 4000 600" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <MovingCloud1 y={150} scale={2.5} opacity={0.6} duration={80} blur={4} />
-          <MovingCloud2 y={300} scale={3.5} opacity={0.5} duration={100} delay={5} blur={2} />
-          <MovingCloud1 y={450} scale={2.2} opacity={0.7} duration={70} delay={10} flip blur={3} />
+          <MovingCloud1 y={150} scale={2.5} opacity={0.6} duration={40} blur={4} />
+          <MovingCloud2 y={300} scale={3.5} opacity={0.5} duration={50} delay={2.5} blur={2} />
+          <MovingCloud1 y={450} scale={2.2} opacity={0.7} duration={35} delay={5} flip blur={3} />
           
-          <ChineseCloud1 x={400} y={200} scale={1.8} opacity={0.6} delay={0.5} blur={1} />
-          <ChineseCloud2 x={1200} y={400} scale={2.0} opacity={0.5} delay={1} flip blur={2} />
-          <ChineseCloud1 x={2200} y={150} scale={1.6} opacity={0.7} delay={1.5} blur={1} />
-          <ChineseCloud2 x={3200} y={300} scale={2.2} opacity={0.6} delay={2} blur={3} />
+          <ChineseCloud1 x={400} y={200} scale={1.8} opacity={0.6} delay={0.2} blur={1} />
+          <ChineseCloud2 x={1200} y={400} scale={2.0} opacity={0.5} delay={0.5} flip blur={2} />
+          <ChineseCloud1 x={2200} y={150} scale={1.6} opacity={0.7} delay={0.7} blur={1} />
+          <ChineseCloud2 x={3200} y={300} scale={2.2} opacity={0.6} delay={1} blur={3} />
           
-          <ChineseCloud1 x={800} y={500} scale={1.8} opacity={0.5} delay={2.5} blur={2} />
-          <ChineseCloud2 x={1800} y={200} scale={1.6} opacity={0.6} delay={3} flip blur={1} />
-          <ChineseCloud1 x={2800} y={450} scale={2.0} opacity={0.5} delay={3.5} blur={2} />
+          <ChineseCloud1 x={800} y={500} scale={1.8} opacity={0.5} delay={1.2} blur={2} />
+          <ChineseCloud2 x={1800} y={200} scale={1.6} opacity={0.6} delay={1.5} flip blur={1} />
+          <ChineseCloud1 x={2800} y={450} scale={2.0} opacity={0.5} delay={1.7} blur={2} />
           
           {/* Extra clouds for more density */}
-          <ChineseCloud1 x={1500} y={300} scale={1.9} opacity={0.6} delay={4} blur={2} />
-          <ChineseCloud2 x={2500} y={200} scale={1.7} opacity={0.5} delay={4.5} flip blur={1} />
-          <ChineseCloud1 x={3600} y={400} scale={2.1} opacity={0.6} delay={5} blur={3} />
+          <ChineseCloud1 x={1500} y={300} scale={1.9} opacity={0.6} delay={2} blur={2} />
+          <ChineseCloud2 x={2500} y={200} scale={1.7} opacity={0.5} delay={2.2} flip blur={1} />
+          <ChineseCloud1 x={3600} y={400} scale={2.1} opacity={0.6} delay={2.5} blur={3} />
         </svg>
       </div>
 

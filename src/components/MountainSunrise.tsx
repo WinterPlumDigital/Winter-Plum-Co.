@@ -11,8 +11,8 @@ export const ChineseCloud1 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = 
         y: [0, -10, 0]
       }}
       transition={{ 
-        x: { duration: 2, ease: "easeOut", delay },
-        opacity: { duration: 2, ease: "easeOut", delay },
+        x: { duration: 0.8, ease: "easeOut", delay },
+        opacity: { duration: 0.8, ease: "easeOut", delay },
         y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay }
       }}
     >
@@ -34,8 +34,8 @@ export const ChineseCloud2 = ({ x, y, scale = 1, opacity = 1, delay = 0, flip = 
         y: [0, -10, 0]
       }}
       transition={{ 
-        x: { duration: 2, ease: "easeOut", delay },
-        opacity: { duration: 2, ease: "easeOut", delay },
+        x: { duration: 0.8, ease: "easeOut", delay },
+        opacity: { duration: 0.8, ease: "easeOut", delay },
         y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay }
       }}
     >
