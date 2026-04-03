@@ -86,7 +86,7 @@ export function Services() {
       <SEO 
         title="Services & Pricing" 
         description="Explore our custom web design and digital marketing services. We offer tailored packages, monthly support, and one-off upgrades for growing brands in San Jose and Silicon Valley."
-        url="https://winterplum.co/#/services"
+        url="https://winterplum.co/services"
         keywords="web design services, website packages, monthly web maintenance, SEO services San Jose, custom web development, digital marketing packages"
         schema={[
           {

@@ -78,7 +78,7 @@ export function Contact() {
       <SEO 
         title="Contact Us" 
         description="Get in touch with Winter Plum & Co. Tell us about your web design or digital marketing project. We're ready to help your brand blossom in San Jose and beyond."
-        url="https://winterplum.co/#/contact"
+        url="https://winterplum.co/contact"
         keywords="contact web designer, hire web design agency San Jose, digital marketing consultation, website project inquiry, Bay Area web design studio"
         schema={[
           {

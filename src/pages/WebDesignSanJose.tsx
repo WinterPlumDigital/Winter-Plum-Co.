@@ -39,7 +39,7 @@ export function WebDesignSanJose() {
         title="Web Design San Jose | Custom Websites"
         description="Elevate your brand with premium web design in San Jose. Winter Plum & Co builds custom, conversion-focused websites for growing Bay Area businesses. Expert San Jose web designer."
         keywords="web design San Jose, San Jose web designer, custom websites San Jose, Bay Area web design, SEO optimized web design, digital agency San Jose, website redesign San Jose"
-        url="https://winterplum.co/#/web-design-san-jose"
+        url="https://winterplum.co/web-design-san-jose"
         schema={[
           ...sanJoseSchema,
           {

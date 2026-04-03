@@ -39,7 +39,7 @@ export function WebDesignSiliconValley() {
         title="Web Design Silicon Valley | Custom Websites"
         description="Elevate your brand with premium web design in Silicon Valley. Winter Plum & Co builds custom, conversion-focused websites for growing Bay Area businesses. Expert Silicon Valley web designer."
         keywords="web design Silicon Valley, Silicon Valley web designer, custom websites Silicon Valley, Bay Area web design, SEO optimized web design, digital agency Silicon Valley, tech company web design"
-        url="https://winterplum.co/#/web-design-silicon-valley"
+        url="https://winterplum.co/web-design-silicon-valley"
         schema={[
           ...siliconValleySchema,
           {
