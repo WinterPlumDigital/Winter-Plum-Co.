@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && cp dist/index.html dist/404.html",
+    "build": "vite build && cp dist/index.html dist/404.html && mkdir -p dist/services dist/contact dist/brand dist/web-design-silicon-valley dist/web-design-san-jose dist/faq && cp dist/index.html dist/services/index.html && cp dist/index.html dist/contact/index.html && cp dist/index.html dist/brand/index.html && cp dist/index.html dist/web-design-silicon-valley/index.html && cp dist/index.html dist/web-design-san-jose/index.html && cp dist/index.html dist/faq/index.html",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
