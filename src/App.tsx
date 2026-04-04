@@ -195,12 +195,24 @@ function FAQPage() {
 
 export const routes: RouteRecord[] = [
   { path: '/', element: <Layout /> },
+
   { path: '/services', element: <ServicesPage /> },
+  { path: '/services.html', element: <ServicesPage /> },
+
   { path: '/contact', element: <ContactPage /> },
+  { path: '/contact.html', element: <ContactPage /> },
+
   { path: '/brand', element: <BrandPage /> },
+  { path: '/brand.html', element: <BrandPage /> },
+
   { path: '/web-design-silicon-valley', element: <SiliconValleyPage /> },
+  { path: '/web-design-silicon-valley.html', element: <SiliconValleyPage /> },
+
   { path: '/web-design-san-jose', element: <SanJosePage /> },
+  { path: '/web-design-san-jose.html', element: <SanJosePage /> },
+
   { path: '/faq', element: <FAQPage /> },
+  { path: '/faq.html', element: <FAQPage /> },
 ]
 
 export default routes
