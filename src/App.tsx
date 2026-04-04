@@ -204,3 +204,4 @@ export const routes: RouteRecord[] = [
 ]
 
 export default routes
+
