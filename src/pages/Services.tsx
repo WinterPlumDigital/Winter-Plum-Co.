@@ -15,6 +15,7 @@ export function Services() {
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-8deg", "8deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (typeof window === 'undefined') return;
     if (window.innerWidth < 1024) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
