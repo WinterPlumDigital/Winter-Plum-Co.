@@ -83,6 +83,55 @@ export function Services() {
   ];
 
   return (
+    <>
+      <SEO
+        title="Services & Pricing | Winter Plum & Co"
+        description="Explore our custom web design and digital marketing services. We offer tailored packages, monthly support, and one-off upgrades for growing brands in San Jose and Silicon Valley."
+        url="https://winterplum.co/services"
+        keywords="web design services, website packages, monthly web maintenance, SEO services San Jose, custom web development, digital marketing packages"
+        schema={[
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: "Web Design & Development",
+          provider: {
+            "@type": "ProfessionalService",
+            name: "Winter Plum & Co",
+          },
+          areaServed: {
+            "@type": "City",
+            name: "San Jose",
+          },
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Web Design Packages",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Basic Web Design Package",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Standard Web Design Package",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Premium Web Design Package",
+                },
+              },
+            ],
+          },
+        },
+      ]}
+    />
+    
     <main className="min-h-screen pt-24 pb-20">
       {/* Header */}
       <section className="px-6 pt-10 pb-10 text-center relative overflow-hidden min-h-[300px] flex flex-col justify-center">
