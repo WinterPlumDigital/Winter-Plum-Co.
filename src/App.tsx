@@ -10,6 +10,7 @@ import { Brand } from './pages/Brand'
 import { WebDesignSiliconValley } from './pages/WebDesignSiliconValley'
 import { WebDesignSanJose } from './pages/WebDesignSanJose'
 import { FAQ } from './pages/FAQ'
+import { Projects } from './pages/Projects'
 
 function Layout() {
   return (
@@ -167,6 +168,36 @@ function SanJosePage() {
   )
 }
 
+function ProjectsPage() {
+  return (
+    <>
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen relative">
+        <div className="fixed inset-0 pointer-events-none z-[-1] bg-[radial-gradient(circle_at_50%_0%,_rgba(250,240,230,0.6),transparent_70%)]" />
+
+        <Navbar />
+
+        <div className="flex-grow">
+          <Projects />
+        </div>
+
+        <Footer />
+      </div>
+
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: '#f7f4ef',
+            color: '#2b2627',
+            border: '1px solid #e5e5e5',
+          },
+        }}
+      />
+    </>
+  )
+}
+
 function FAQPage() {
   return (
     <>
@@ -213,6 +244,9 @@ export const routes: RouteRecord[] = [
 
   { path: '/faq', element: <FAQPage /> },
   { path: '/faq.html', element: <FAQPage /> },
+
+  { path: '/projects', element: <ProjectsPage /> },
+  { path: '/projects.html', element: <ProjectsPage /> },
 ]
 
 export default routes

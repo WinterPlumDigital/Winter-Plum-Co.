@@ -31,6 +31,7 @@ export default defineConfig(({ mode }) => {
           '/services',
           '/web-design-san-jose',
           '/web-design-silicon-valley',
+          '/projects',
         ];
       },
     },
