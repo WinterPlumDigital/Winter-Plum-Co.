@@ -85,53 +85,53 @@ export function Services() {
   return (
     <>
       <SEO
-  title="Services & Pricing | Winter Plum & Co"
-  description="Explore our custom web design and digital marketing services. We offer tailored packages, monthly support, and one-off upgrades for growing brands in San Jose and Silicon Valley."
-  url="https://winterplum.co/services"
-  keywords="web design services, website packages, monthly web maintenance, SEO services San Jose, custom web development, digital marketing packages"
-  schema={[
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      serviceType: "Web Design & Development",
-      provider: {
-        "@type": "ProfessionalService",
-        name: "Winter Plum & Co",
-      },
-      areaServed: {
-        "@type": "City",
-        name: "San Jose",
-      },
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Web Design Packages",
-        itemListElement: [
+        title="Services & Pricing | Winter Plum & Co"
+        description="Explore our custom web design and digital marketing services. We offer tailored packages, monthly support, and one-off upgrades for growing brands in San Jose and Silicon Valley."
+        url="https://winterplum.co/services"
+        keywords="web design services, website packages, monthly web maintenance, SEO services San Jose, custom web development, digital marketing packages"
+        schema={[
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Basic Web Design Package",
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Web Design & Development",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "Winter Plum & Co",
+            },
+            areaServed: {
+              "@type": "City",
+              name: "San Jose",
+            },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Web Design Packages",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Basic Web Design Package",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Standard Web Design Package",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Premium Web Design Package",
+                  },
+                },
+              ],
             },
           },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Standard Web Design Package",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Premium Web Design Package",
-            },
-          },
-        ],
-      },
-    },
-  ]}
-/>
+        ]}
+      />
 
       <main className="min-h-screen pt-24 pb-20">
         <section className="px-6 pt-10 pb-10 text-center relative overflow-hidden min-h-[300px] flex flex-col justify-center">
@@ -178,33 +178,29 @@ export function Services() {
                   <div
                     key={index}
                     onMouseEnter={() => setHoveredCard(index)}
-                    className={`flex-1 p-8 lg:p-10 rounded-[2.5rem] flex flex-col relative transition-colors duration-500 border border-[#D4AF37]/50 ${
-                      isActive
+                    className={`flex-1 p-8 lg:p-10 rounded-[2.5rem] flex flex-col relative transition-colors duration-500 border border-[#D4AF37]/50 ${isActive
                         ? "bg-mulberry shadow-2xl border-[#D4AF37] z-10"
                         : "bg-white/80 backdrop-blur-xl shadow-xl z-0"
-                    } ${index === 1 ? "lg:-mt-8 lg:mb-8" : ""}`}
+                      } ${index === 1 ? "lg:-mt-8 lg:mb-8" : ""}`}
                     style={{ transform: pkg.transform }}
                   >
                     {pkg.badge && (
                       <div
-                        className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-md whitespace-nowrap transition-colors duration-500 ${
-                          isActive ? "bg-blush text-mulberry" : "bg-mulberry text-cream"
-                        }`}
+                        className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-md whitespace-nowrap transition-colors duration-500 ${isActive ? "bg-blush text-mulberry" : "bg-mulberry text-cream"
+                          }`}
                       >
                         {pkg.badge}
                       </div>
                     )}
                     <h4
-                      className={`text-2xl font-serif mb-2 transition-colors duration-500 ${
-                        isActive ? "text-cream" : "text-ink"
-                      }`}
+                      className={`text-2xl font-serif mb-2 transition-colors duration-500 ${isActive ? "text-cream" : "text-ink"
+                        }`}
                     >
                       {pkg.title}
                     </h4>
                     <p
-                      className={`text-sm mb-8 h-10 transition-colors duration-500 ${
-                        isActive ? "text-cream/70" : "text-ink/60"
-                      }`}
+                      className={`text-sm mb-8 h-10 transition-colors duration-500 ${isActive ? "text-cream/70" : "text-ink/60"
+                        }`}
                     >
                       {pkg.subtitle}
                     </p>
@@ -212,15 +208,13 @@ export function Services() {
                       {pkg.features.map((feature, i) => (
                         <li
                           key={i}
-                          className={`flex items-start gap-3 text-sm transition-colors duration-500 ${
-                            isActive ? "text-cream/90" : "text-ink/80"
-                          }`}
+                          className={`flex items-start gap-3 text-sm transition-colors duration-500 ${isActive ? "text-cream/90" : "text-ink/80"
+                            }`}
                         >
                           <CheckCircle2
                             size={16}
-                            className={`shrink-0 mt-0.5 transition-colors duration-500 ${
-                              isActive ? "text-blush" : "text-sage"
-                            }`}
+                            className={`shrink-0 mt-0.5 transition-colors duration-500 ${isActive ? "text-blush" : "text-sage"
+                              }`}
                           />
                           <span>{feature}</span>
                         </li>
@@ -228,11 +222,10 @@ export function Services() {
                     </ul>
                     <Link
                       to="/contact"
-                      className={`w-full py-4 rounded-full text-center text-sm uppercase tracking-widest transition-all duration-500 ${
-                        isActive
+                      className={`w-full py-4 rounded-full text-center text-sm uppercase tracking-widest transition-all duration-500 ${isActive
                           ? "bg-cream text-mulberry hover:bg-white shadow-lg"
                           : "border border-ink/20 text-ink hover:bg-ink/5"
-                      }`}
+                        }`}
                     >
                       {pkg.buttonText}
                     </Link>
