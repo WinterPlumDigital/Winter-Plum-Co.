@@ -42,4 +42,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+  <loc>https://winterplum.co/work</loc>
+  <lastmod>2026-04-10</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  </url>
 </urlset>
