@@ -48,7 +48,7 @@ export function Projects() {
                             Ace Athletics Youth Soccer Academy
                         </h3>
                         <p className="text-[#302928]/60 font-light italic">
-                            Full academy-based redesign with improved online traffic and stronger conversions.
+                            Full Academic-based Redesign- Increased online traffic & Sales by 23%
                         </p>
                     </div>
 
