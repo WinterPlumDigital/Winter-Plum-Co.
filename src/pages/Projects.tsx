@@ -1,6 +1,6 @@
 import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
-
+import { MountainSunrise } from "../components/MountainSunrise";
 
 export function Projects() {
     return (
