@@ -256,7 +256,7 @@ export function Services() {
                   >
                     <div className="flex justify-between items-start mb-6">
                       <h4 className="text-2xl font-serif text-ink group-hover:text-cream transition-colors duration-500">
-                        Steady Plan
+                        Root Plan
                       </h4>
                       <span className="text-mulberry group-hover:text-cream font-medium text-xl transition-colors duration-500">
                         $45
@@ -287,7 +287,7 @@ export function Services() {
                   >
                     <div className="flex justify-between items-start mb-6">
                       <h4 className="text-2xl font-serif text-ink group-hover:text-cream transition-colors duration-500">
-                        Blossoming Plan
+                        Bloom Plan
                       </h4>
                       <span className="text-mulberry group-hover:text-cream font-medium text-xl transition-colors duration-500">
                         $80
