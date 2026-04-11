@@ -31,8 +31,8 @@ export function Services() {
 
   const packages = [
     {
-      title: "Basic",
-      subtitle: "Clean, foundational design.",
+      title: "Seedling",
+      subtitle: "Your starting point. Clean, essential, ready to grow.",
       features: [
         "3 pages",
         "Clean, basic design with a modern layout",
@@ -43,13 +43,13 @@ export function Services() {
         "Launch",
         "2 rounds of revision",
       ],
-      buttonText: "Select Basic",
+      buttonText: "Select Seedling Plan",
       transform: "translateZ(30px)",
       badge: null,
     },
     {
-      title: "Standard",
-      subtitle: "Conversion focused growth.",
+      title: "Blossoming",
+      subtitle: "Designed to attract, engage, and convert.",
       features: [
         "Everything from Basic",
         "4-7 pages",
@@ -61,13 +61,13 @@ export function Services() {
         "1 week of post launch support",
         "Guided handoff",
       ],
-      buttonText: "Select Standard",
+      buttonText: "Select Blossoming Plan",
       transform: "translateZ(60px)",
       badge: "Most Popular",
     },
     {
-      title: "Premium",
-      subtitle: "Fully custom digital experience.",
+      title: "Evergreen",
+      subtitle: "Built for long-term growth, performance, and scale.",
       features: [
         "Everything from Standard & Basic",
         "8+ pages",
@@ -76,7 +76,7 @@ export function Services() {
         "Premium visual design",
         "Priority support",
       ],
-      buttonText: "Select Premium",
+      buttonText: "Select Evergreen Plan",
       transform: "translateZ(30px)",
       badge: null,
     },
