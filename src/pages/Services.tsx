@@ -256,7 +256,7 @@ export function Services() {
                   >
                     <div className="flex justify-between items-start mb-6">
                       <h4 className="text-2xl font-serif text-ink group-hover:text-cream transition-colors duration-500">
-                        Basic Care
+                        Steady Plan
                       </h4>
                       <span className="text-mulberry group-hover:text-cream font-medium text-xl transition-colors duration-500">
                         $45
@@ -272,11 +272,11 @@ export function Services() {
                       </li>
                       <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
                         <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>Small edits</span>
+                        <span>Edits on visuals and text</span>
                       </li>
                       <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
                         <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>Support</span>
+                        <span>Domain & Launch Support</span>
                       </li>
                     </ul>
                   </Link>
@@ -339,11 +339,11 @@ export function Services() {
                           Content Upgrade
                         </h4>
                         <p className="text-sm text-ink/60 group-hover:text-cream/70 transition-colors duration-500 font-light">
-                          Refresh and optimize your existing copy.
+                          Refine and enhance your website’s content for clarity, professionalism, and stronger customer engagement.
                         </p>
                       </div>
                       <span className="text-mulberry group-hover:text-cream transition-colors duration-500 font-medium text-xl">
-                        $35
+                        $45
                       </span>
                     </li>
                     <li className="flex justify-between items-center border-b border-ink/5 group-hover:border-cream/10 transition-colors duration-500 pb-6 last:border-0 last:pb-0">
@@ -352,11 +352,11 @@ export function Services() {
                           Visual Upgrade
                         </h4>
                         <p className="text-sm text-ink/60 group-hover:text-cream/70 transition-colors duration-500 font-light">
-                          Enhance your imagery and visual assets.
+                          Enhance your visuals with refined, high-quality imagery that elevates your brand.
                         </p>
                       </div>
                       <span className="text-mulberry group-hover:text-cream transition-colors duration-500 font-medium text-xl">
-                        $50
+                        $60
                       </span>
                     </li>
                     <li className="flex justify-between items-center border-b border-ink/5 group-hover:border-cream/10 transition-colors duration-500 pb-6 last:border-0 last:pb-0">
@@ -365,11 +365,11 @@ export function Services() {
                           New Page
                         </h4>
                         <p className="text-sm text-ink/60 group-hover:text-cream/70 transition-colors duration-500 font-light">
-                          Design and development of an additional page.
+                          Custom design and development of an additional page tailored to your brand.
                         </p>
                       </div>
                       <span className="text-mulberry group-hover:text-cream transition-colors duration-500 font-medium text-xl">
-                        $150
+                        $200
                       </span>
                     </li>
                   </ul>
