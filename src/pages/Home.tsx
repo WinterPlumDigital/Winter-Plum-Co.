@@ -54,8 +54,8 @@ export function Home() {
 
   const packages = [
     {
-      title: "Basic",
-      subtitle: "Clean, foundational design.",
+      title: "Seedling",
+      subtitle: "Your starting point. Clean, essential, ready to grow.",
       features: [
         "3 pages",
         "Clean, basic design with a modern layout",
@@ -71,8 +71,8 @@ export function Home() {
       badge: null
     },
     {
-      title: "Standard",
-      subtitle: "Conversion focused growth.",
+      title: "Blossoming",
+      subtitle: "Designed to attract, engage, and convert.",
       features: [
         "Everything from Basic",
         "4-7 pages",
@@ -89,8 +89,8 @@ export function Home() {
       badge: "Most Popular"
     },
     {
-      title: "Premium",
-      subtitle: "Fully custom digital experience.",
+      title: "Evergreen",
+      subtitle: "Built for long-term growth, performance, and scale.",
       features: [
         "Everything from Standard & Basic",
         "8+ pages",
