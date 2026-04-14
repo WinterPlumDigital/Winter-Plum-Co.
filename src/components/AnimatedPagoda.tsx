@@ -135,7 +135,4 @@ export function AnimatedPagoda({ className = "" }: { className?: string }) {
     </div>
   );
 }
-      </svg>
-    </div>
-  );
-}
+     
