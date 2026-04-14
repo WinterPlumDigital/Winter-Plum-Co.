@@ -366,8 +366,10 @@ export function Home() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative bg-cream-dark/30 flex items-center justify-center p-8 border border-mulberry/10">
-              <AnimatedPagoda />
+            <div className="rounded-[2rem] overflow-hidden relative bg-cream-dark/30 border border-mulberry/10 h-[420px] sm:h-[520px] md:aspect-[4/5] md:h-auto flex items-center justify-center p-4 sm:p-6 md:p-8">
+              <div className="w-full h-full flex items-center justify-center">
+                <AnimatedPagoda />
+              </div>
             </div>
           </motion.div>
         </div>
