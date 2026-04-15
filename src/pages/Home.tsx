@@ -7,28 +7,24 @@ import { PlumBranch } from "../components/PlumBranch";
 import { GrowingPlumBranch } from "../components/GrowingPlumBranch";
 import { SEO } from "../components/SEO";
 import { ChineseCloud1, ChineseCloud2, MovingCloud1, MovingCloud2 } from "../components/MountainSunrise";
-
 import { AnimatedPagoda } from "../components/AnimatedPagoda";
 
 export function Home() {
   const { scrollY } = useScroll();
   const accumulatedRotation = useMotionValue(0);
-  
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    // Only add rotation when scrolling down (latest > previous)
     if (previous !== undefined && latest > previous) {
       const diff = latest - previous;
-      // 720 degrees per 1000px = 0.72 degrees per px
       accumulatedRotation.set(accumulatedRotation.get() + diff * 0.72);
     }
   });
 
-  // Add spring physics to create the "fidget spinner" momentum effect (slowly easing to a stop)
-  const logoRotate = useSpring(accumulatedRotation, { 
-    damping: 40, 
-    stiffness: 50, 
-    mass: 2 
+  const logoRotate = useSpring(accumulatedRotation, {
+    damping: 40,
+    stiffness: 50,
+    mass: 2
   });
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(1);
@@ -38,7 +34,7 @@ export function Home() {
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-8deg", "8deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
     if (window.innerWidth < 1024) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
@@ -67,7 +63,6 @@ export function Home() {
         "2 rounds of revision"
       ],
       buttonText: "Select Basic",
-      transform: "translateZ(30px)",
       badge: null
     },
     {
@@ -85,7 +80,6 @@ export function Home() {
         "Guided handoff"
       ],
       buttonText: "Select Standard",
-      transform: "translateZ(60px)",
       badge: "Most Popular"
     },
     {
@@ -100,15 +94,14 @@ export function Home() {
         "Priority support"
       ],
       buttonText: "Select Premium",
-      transform: "translateZ(30px)",
       badge: null
     }
   ];
 
   return (
     <main className="min-h-screen pt-20">
-      <SEO 
-        title="Home" 
+      <SEO
+        title="Home"
         description="Winter Plum & Co is a premium web design studio based in San Jose, CA. We create custom, conversion-focused websites for small businesses and growing brands in Silicon Valley and beyond."
         url="https://winterplum.co"
         keywords="web design San Jose, custom website design Silicon Valley, conversion-focused web design, premium web design studio, small business websites, modern digital agency"
@@ -116,30 +109,29 @@ export function Home() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Winter Plum & Co | Premium Web Design Studio",
-            "description": "Custom web design and digital strategy for growing brands.",
-            "breadcrumb": {
+            name: "Winter Plum & Co | Premium Web Design Studio",
+            description: "Custom web design and digital strategy for growing brands.",
+            breadcrumb: {
               "@type": "BreadcrumbList",
-              "itemListElement": [
+              itemListElement: [
                 {
                   "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "https://winterplum.co"
+                  position: 1,
+                  name: "Home",
+                  item: "https://winterplum.co"
                 }
               ]
             }
           }
         ]}
       />
+
       {/* Hero Section */}
       <section className="relative px-6 py-32 md:py-48 overflow-hidden flex items-center justify-center text-center">
-        {/* Decorative background elements */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blush/30 rounded-full blur-3xl mix-blend-multiply opacity-70 animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sage/20 rounded-full blur-3xl mix-blend-multiply opacity-70" />
-        
-        {/* Plum Blossom Branches */}
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, x: -50, y: -50 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -148,7 +140,7 @@ export function Home() {
           <PlumBranch className="w-full h-full" />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 50, y: 50 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -156,11 +148,10 @@ export function Home() {
         >
           <PlumBranch className="w-full h-full" />
         </motion.div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-          {/* Faded Logo Background */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] sm:w-[120%] md:w-[100%] aspect-square pointer-events-none -z-10 flex items-center justify-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 0.25, scale: 1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
@@ -180,29 +171,30 @@ export function Home() {
             <span className="w-2 h-2 rounded-full bg-mulberry animate-pulse" />
             Digital Marketing & Design
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="text-5xl md:text-7xl lg:text-8xl font-serif text-ink tracking-tight leading-[1.1] mb-8"
-            style={{ textShadow: '0 4px 24px rgba(247,244,239,0.9), 0 0 10px rgba(247,244,239,0.8)' }}
+            style={{ textShadow: "0 4px 24px rgba(247,244,239,0.9), 0 0 10px rgba(247,244,239,0.8)" }}
           >
             We Build, <br className="hidden md:block" />
             <span className="text-mulberry font-medium">You Blossom</span>
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-lg md:text-xl text-ink/80 max-w-2xl font-light leading-relaxed mb-12"
-            style={{ textShadow: '0 2px 10px rgba(247,244,239,0.9)' }}
+            style={{ textShadow: "0 2px 10px rgba(247,244,239,0.9)" }}
           >
-            We build memorable, high-converting websites for growing brands.<br className="hidden sm:block" />
+            We build memorable, high-converting websites for growing brands.
+            <br className="hidden sm:block" />
             Built to perform. So your brand can blossom in any season.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -226,13 +218,12 @@ export function Home() {
       </section>
 
       {/* Interactive Pricing Carousel */}
-      <section 
+      <section
         className="px-6 py-32 bg-cream-dark/30 relative overflow-hidden"
         style={{ perspective: "2000px" }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        {/* Growing Plum Branches */}
         <div className="absolute top-0 left-0 w-64 md:w-96 text-mulberry pointer-events-none z-0">
           <GrowingPlumBranch className="w-full h-full" />
         </div>
@@ -248,50 +239,67 @@ export function Home() {
             </h2>
           </div>
 
-          <motion.div 
+          <motion.div
             style={{ rotateY, transformStyle: "preserve-3d" }}
-            className="flex flex-col lg:flex-row gap-8 items-stretch justify-center"
+            className="
+              flex gap-6 items-stretch
+              overflow-x-auto lg:overflow-visible
+              snap-x snap-mandatory lg:snap-none
+              pb-4 lg:pb-0
+              lg:flex-row
+            "
           >
             {packages.map((pkg, index) => {
               const isActive = hoveredCard === index;
-              
+
               return (
-                <div 
+                <div
                   key={index}
                   onMouseEnter={() => setHoveredCard(index)}
-                  className={`flex-1 p-8 lg:p-10 rounded-[2.5rem] flex flex-col relative transition-colors duration-500 ${
-                    isActive 
-                      ? "bg-mulberry shadow-2xl border-mulberry-light/20 border z-10" 
+                  className={`min-w-[85%] sm:min-w-[70%] lg:min-w-0 lg:flex-1 snap-center p-6 lg:p-10 rounded-[2.5rem] flex flex-col relative transition-colors duration-500 ${
+                    isActive
+                      ? "bg-mulberry shadow-2xl border-mulberry-light/20 border z-10"
                       : "bg-white/80 backdrop-blur-xl shadow-xl border-white/40 border z-0"
                   } ${index === 1 ? "lg:-mt-8 lg:mb-8" : ""}`}
-                  style={{ transform: pkg.transform }}
                 >
                   {pkg.badge && (
-                    <div className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-md whitespace-nowrap transition-colors duration-500 ${
-                      isActive ? "bg-blush text-mulberry" : "bg-mulberry text-cream"
-                    }`}>
+                    <div
+                      className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-md whitespace-nowrap transition-colors duration-500 ${
+                        isActive ? "bg-blush text-mulberry" : "bg-mulberry text-cream"
+                      }`}
+                    >
                       {pkg.badge}
                     </div>
                   )}
+
                   <h3 className={`text-2xl font-serif mb-2 transition-colors duration-500 ${isActive ? "text-cream" : "text-ink"}`}>
                     {pkg.title}
                   </h3>
-                  <p className={`text-sm mb-8 h-10 transition-colors duration-500 ${isActive ? "text-cream/70" : "text-ink/60"}`}>
+
+                  <p className={`text-sm mb-6 min-h-[3rem] lg:h-10 transition-colors duration-500 ${isActive ? "text-cream/70" : "text-ink/60"}`}>
                     {pkg.subtitle}
                   </p>
+
                   <ul className="space-y-4 flex-1 mb-8">
                     {pkg.features.map((feature, i) => (
-                      <li key={i} className={`flex items-start gap-3 text-sm transition-colors duration-500 ${isActive ? "text-cream/90" : "text-ink/80"}`}>
-                        <CheckCircle2 size={16} className={`shrink-0 mt-0.5 transition-colors duration-500 ${isActive ? "text-blush" : "text-sage"}`} />
+                      <li
+                        key={i}
+                        className={`flex items-start gap-3 text-sm transition-colors duration-500 ${isActive ? "text-cream/90" : "text-ink/80"}`}
+                      >
+                        <CheckCircle2
+                          size={16}
+                          className={`shrink-0 mt-0.5 transition-colors duration-500 ${isActive ? "text-blush" : "text-sage"}`}
+                        />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <Link 
-                    to="/contact" 
+
+                  <Link
+                    to="/contact"
                     className={`w-full py-4 rounded-full text-center text-sm uppercase tracking-widest transition-all duration-500 ${
-                      isActive 
-                        ? "bg-cream text-mulberry hover:bg-white shadow-lg" 
+                      isActive
+                        ? "bg-cream text-mulberry hover:bg-white shadow-lg"
                         : "border border-ink/20 text-ink hover:bg-ink/5"
                     }`}
                   >
@@ -310,17 +318,16 @@ export function Home() {
           <MovingCloud1 y={150} scale={2.5} opacity={0.6} duration={40} blur={4} />
           <MovingCloud2 y={300} scale={3.5} opacity={0.5} duration={50} delay={2.5} blur={2} />
           <MovingCloud1 y={450} scale={2.2} opacity={0.7} duration={35} delay={5} flip blur={3} />
-          
+
           <ChineseCloud1 x={400} y={200} scale={1.8} opacity={0.6} delay={0.2} blur={1} />
           <ChineseCloud2 x={1200} y={400} scale={2.0} opacity={0.5} delay={0.5} flip blur={2} />
           <ChineseCloud1 x={2200} y={150} scale={1.6} opacity={0.7} delay={0.7} blur={1} />
           <ChineseCloud2 x={3200} y={300} scale={2.2} opacity={0.6} delay={1} blur={3} />
-          
+
           <ChineseCloud1 x={800} y={500} scale={1.8} opacity={0.5} delay={1.2} blur={2} />
           <ChineseCloud2 x={1800} y={200} scale={1.6} opacity={0.6} delay={1.5} flip blur={1} />
           <ChineseCloud1 x={2800} y={450} scale={2.0} opacity={0.5} delay={1.7} blur={2} />
-          
-          {/* Extra clouds for more density */}
+
           <ChineseCloud1 x={1500} y={300} scale={1.9} opacity={0.6} delay={2} blur={2} />
           <ChineseCloud2 x={2500} y={200} scale={1.7} opacity={0.5} delay={2.2} flip blur={1} />
           <ChineseCloud1 x={3600} y={400} scale={2.1} opacity={0.6} delay={2.5} blur={3} />
@@ -339,7 +346,8 @@ export function Home() {
           >
             <span className="block text-sm uppercase tracking-widest text-sage font-medium mb-4">Our Philosophy</span>
             <h2 className="text-4xl md:text-5xl font-serif text-ink leading-tight mb-8">
-              Built to grow, <br/><span className="font-bold text-mulberry">Designed with Meaning</span>
+              Built to grow, <br />
+              <span className="font-bold text-mulberry">Designed with Meaning</span>
             </h2>
             <p className="text-ink/70 font-light leading-relaxed mb-8 text-lg">
               We believe that your website should not only look good today. It should hold up tomorrow, next season, and years from now. We design with longevity in mind- so your brand evolves alongside you.
@@ -352,13 +360,15 @@ export function Home() {
                 "Built for long-term growth"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <span className="mt-1 text-sage"><CheckCircle2 size={20} /></span>
+                  <span className="mt-1 text-sage">
+                    <CheckCircle2 size={20} />
+                  </span>
                   <span className="text-ink/80">{item}</span>
                 </li>
               ))}
             </ul>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -378,11 +388,10 @@ export function Home() {
       {/* Services Preview */}
       <section className="px-6 py-16 md:py-20 bg-mulberry text-cream relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-           <div className="absolute -top-40 -right-40 w-96 h-96 bg-mulberry-light rounded-full blur-3xl opacity-20" />
-           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-ink rounded-full blur-3xl opacity-20" />
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-mulberry-light rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-ink rounded-full blur-3xl opacity-20" />
         </div>
-        
-        {/* Plum Blossom Logo Background */}
+
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] pointer-events-none z-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
@@ -394,7 +403,7 @@ export function Home() {
             <Logo className="w-full h-full text-cream" />
           </motion.div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <span className="block text-sm uppercase tracking-widest text-blush font-medium mb-4">What We Do</span>
@@ -445,7 +454,15 @@ export function Home() {
 
           <div className="mt-20 pt-8 border-t border-cream/10 text-center text-sm text-cream/60">
             <p>
-              We work with growing businesses across the Bay Area. Looking for <Link to="/web-design-silicon-valley" className="underline hover:text-cream transition-colors">web design in the Silicon Valley</Link> or <Link to="/web-design-san-jose" className="underline hover:text-cream transition-colors">San Jose</Link>? Learn more here.
+              We work with growing businesses across the Bay Area. Looking for{" "}
+              <Link to="/web-design-silicon-valley" className="underline hover:text-cream transition-colors">
+                web design in the Silicon Valley
+              </Link>{" "}
+              or{" "}
+              <Link to="/web-design-san-jose" className="underline hover:text-cream transition-colors">
+                San Jose
+              </Link>
+              ? Learn more here.
             </p>
           </div>
         </div>
