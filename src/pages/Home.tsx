@@ -224,10 +224,10 @@ export function Home() {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="absolute top-0 left-0 w-64 md:w-96 text-mulberry pointer-events-none z-0">
+        <div className="absolute top-20 left-0 w-40 md:w-96 text-mulberry pointer-events-none -z-10 opacity-50">
           <GrowingPlumBranch className="w-full h-full" />
         </div>
-        <div className="absolute top-0 right-0 w-64 md:w-96 text-mulberry pointer-events-none z-0 scale-x-[-1]">
+        <div className="absolute top-20 right-0 w-40 md:w-96 text-mulberry pointer-events-none -z-10 opacity-50 scale-x-[-1]">
           <GrowingPlumBranch className="w-full h-full" />
         </div>
 
