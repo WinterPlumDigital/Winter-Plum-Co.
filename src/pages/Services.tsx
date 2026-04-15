@@ -44,7 +44,6 @@ export function Services() {
         "2 rounds of revision",
       ],
       buttonText: "Select Seedling Plan",
-      transform: "translateZ(30px)",
       badge: null,
     },
     {
@@ -62,7 +61,6 @@ export function Services() {
         "Guided handoff",
       ],
       buttonText: "Select Blossoming Plan",
-      transform: "translateZ(60px)",
       badge: "Most Popular",
     },
     {
@@ -77,8 +75,52 @@ export function Services() {
         "Priority support",
       ],
       buttonText: "Select Evergreen Plan",
-      transform: "translateZ(30px)",
       badge: null,
+    },
+  ];
+
+  const monthlyPlans = [
+    {
+      title: "Root Plan",
+      price: "$45",
+      suffix: "/m",
+      features: [
+        "Website & Domain maintenance",
+        "Edits on visuals and text",
+        "Domain & Launch Support",
+      ],
+    },
+    {
+      title: "Bloom Plan",
+      price: "$80",
+      suffix: "/m",
+      features: [
+        "Everything in Basic",
+        "SEO Updates",
+        "Content & Web updates",
+        "Up to 1 new page created per month",
+      ],
+    },
+  ];
+
+  const oneOffs = [
+    {
+      title: "Content Upgrade",
+      description:
+        "Refine and enhance your website’s content for clarity, professionalism, and stronger customer engagement.",
+      price: "$45",
+    },
+    {
+      title: "Visual Upgrade",
+      description:
+        "Enhance your visuals with refined, high-quality imagery that elevates your brand.",
+      price: "$60",
+    },
+    {
+      title: "New Page",
+      description:
+        "Custom design and development of an additional page tailored to your brand.",
+      price: "$200",
     },
   ];
 
@@ -158,10 +200,10 @@ export function Services() {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="absolute -top-48 left-0 w-64 md:w-96 text-mulberry pointer-events-none z-0">
+          <div className="absolute top-20 left-0 w-40 md:w-96 text-mulberry pointer-events-none -z-10 opacity-50">
             <GrowingPlumBranch className="w-full h-full overflow-visible" />
           </div>
-          <div className="absolute -top-48 right-0 w-64 md:w-96 text-mulberry pointer-events-none z-0 scale-x-[-1]">
+          <div className="absolute top-20 right-0 w-40 md:w-96 text-mulberry pointer-events-none -z-10 opacity-50 scale-x-[-1]">
             <GrowingPlumBranch className="w-full h-full overflow-visible" />
           </div>
 
@@ -169,7 +211,13 @@ export function Services() {
             <h2 className="sr-only">Web Design Packages</h2>
             <motion.div
               style={{ rotateY, transformStyle: "preserve-3d" }}
-              className="flex flex-col lg:flex-row gap-8 items-stretch justify-center"
+              className="
+                flex gap-6 items-stretch
+                overflow-x-auto lg:overflow-visible
+                snap-x snap-mandatory lg:snap-none
+                pt-4 pb-4 lg:pb-0
+                lg:flex-row
+              "
             >
               {packages.map((pkg, index) => {
                 const isActive = hoveredCard === index;
@@ -178,29 +226,32 @@ export function Services() {
                   <div
                     key={index}
                     onMouseEnter={() => setHoveredCard(index)}
-                    className={`flex-1 p-8 lg:p-10 rounded-[2.5rem] flex flex-col relative transition-colors duration-500 border border-[#D4AF37]/50 ${isActive
+                    className={`min-w-[85%] sm:min-w-[70%] lg:min-w-0 lg:flex-1 snap-center p-6 lg:p-10 rounded-[2.5rem] flex flex-col relative transition-colors duration-500 border border-[#D4AF37]/50 ${
+                      isActive
                         ? "bg-mulberry shadow-2xl border-[#D4AF37] z-10"
                         : "bg-white/80 backdrop-blur-xl shadow-xl z-0"
-                      } ${index === 1 ? "lg:-mt-8 lg:mb-8" : ""}`}
-                    style={{ transform: pkg.transform }}
+                    } ${index === 1 ? "lg:-mt-8 lg:mb-8" : ""}`}
                   >
                     {pkg.badge && (
                       <div
-                        className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-md whitespace-nowrap transition-colors duration-500 ${isActive ? "bg-blush text-mulberry" : "bg-mulberry text-cream"
-                          }`}
+                        className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-md whitespace-nowrap transition-colors duration-500 ${
+                          isActive ? "bg-blush text-mulberry" : "bg-mulberry text-cream"
+                        }`}
                       >
                         {pkg.badge}
                       </div>
                     )}
                     <h4
-                      className={`text-2xl font-serif mb-2 transition-colors duration-500 ${isActive ? "text-cream" : "text-ink"
-                        }`}
+                      className={`text-2xl font-serif mb-2 transition-colors duration-500 ${
+                        isActive ? "text-cream" : "text-ink"
+                      }`}
                     >
                       {pkg.title}
                     </h4>
                     <p
-                      className={`text-sm mb-8 h-10 transition-colors duration-500 ${isActive ? "text-cream/70" : "text-ink/60"
-                        }`}
+                      className={`text-sm mb-6 min-h-[3rem] lg:h-10 transition-colors duration-500 ${
+                        isActive ? "text-cream/70" : "text-ink/60"
+                      }`}
                     >
                       {pkg.subtitle}
                     </p>
@@ -208,13 +259,15 @@ export function Services() {
                       {pkg.features.map((feature, i) => (
                         <li
                           key={i}
-                          className={`flex items-start gap-3 text-sm transition-colors duration-500 ${isActive ? "text-cream/90" : "text-ink/80"
-                            }`}
+                          className={`flex items-start gap-3 text-sm transition-colors duration-500 ${
+                            isActive ? "text-cream/90" : "text-ink/80"
+                          }`}
                         >
                           <CheckCircle2
                             size={16}
-                            className={`shrink-0 mt-0.5 transition-colors duration-500 ${isActive ? "text-blush" : "text-sage"
-                              }`}
+                            className={`shrink-0 mt-0.5 transition-colors duration-500 ${
+                              isActive ? "text-blush" : "text-sage"
+                            }`}
                           />
                           <span>{feature}</span>
                         </li>
@@ -222,10 +275,11 @@ export function Services() {
                     </ul>
                     <Link
                       to="/contact"
-                      className={`w-full py-4 rounded-full text-center text-sm uppercase tracking-widest transition-all duration-500 ${isActive
+                      className={`w-full py-4 rounded-full text-center text-sm uppercase tracking-widest transition-all duration-500 ${
+                        isActive
                           ? "bg-cream text-mulberry hover:bg-white shadow-lg"
                           : "border border-ink/20 text-ink hover:bg-ink/5"
-                        }`}
+                      }`}
                     >
                       {pkg.buttonText}
                     </Link>
@@ -237,145 +291,114 @@ export function Services() {
         </section>
 
         <section className="px-6 pt-8 pb-24 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-serif text-ink mb-8 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-mulberry"></span>
+                Monthly Services
+              </h3>
+
+              <div
+                className="
+                  flex lg:flex-col gap-6
+                  overflow-x-auto lg:overflow-visible
+                  snap-x snap-mandatory lg:snap-none
+                  pb-4 lg:pb-0
+                "
               >
-                <h3 className="text-3xl font-serif text-ink mb-8 flex items-center gap-4">
-                  <span className="w-8 h-[1px] bg-mulberry"></span>
-                  Monthly Services
-                </h3>
-                <div className="space-y-6">
+                {monthlyPlans.map((plan, index) => (
                   <Link
+                    key={index}
                     to="/contact"
-                    className="group block bg-white/60 backdrop-blur-sm p-8 rounded-[2rem] border border-ink/10 hover:bg-mulberry hover:border-mulberry hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-lg cursor-pointer"
+                    className="
+                      group block min-w-[85%] sm:min-w-[70%] lg:min-w-0 snap-center
+                      bg-white/60 backdrop-blur-sm p-8 rounded-[2rem]
+                      border border-ink/10 hover:bg-mulberry hover:border-mulberry
+                      hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-lg cursor-pointer
+                    "
                   >
-                    <div className="flex justify-between items-start mb-6">
+                    <div className="flex justify-between items-start mb-6 gap-4">
                       <h4 className="text-2xl font-serif text-ink group-hover:text-cream transition-colors duration-500">
-                        Root Plan
+                        {plan.title}
                       </h4>
-                      <span className="text-mulberry group-hover:text-cream font-medium text-xl transition-colors duration-500">
-                        $45
+                      <span className="text-mulberry group-hover:text-cream font-medium text-xl transition-colors duration-500 whitespace-nowrap">
+                        {plan.price}
                         <span className="text-sm text-ink/50 group-hover:text-cream/70 transition-colors duration-500">
-                          /m
+                          {plan.suffix}
                         </span>
                       </span>
                     </div>
+
                     <ul className="space-y-4">
-                      <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
-                        <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>Website & Domain maintenance</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
-                        <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>Edits on visuals and text</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
-                        <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>Domain & Launch Support</span>
-                      </li>
+                      {plan.features.map((feature, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500"
+                        >
+                          <CheckCircle2
+                            size={18}
+                            className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500"
+                          />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
                     </ul>
                   </Link>
+                ))}
+              </div>
+            </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-3xl font-serif text-ink mb-8 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-mulberry"></span>
+                One Offs
+              </h3>
+
+              <div
+                className="
+                  flex lg:flex-col gap-6
+                  overflow-x-auto lg:overflow-visible
+                  snap-x snap-mandatory lg:snap-none
+                  pb-4 lg:pb-0
+                "
+              >
+                {oneOffs.map((item, index) => (
                   <Link
+                    key={index}
                     to="/contact"
-                    className="group block bg-white/60 backdrop-blur-sm p-8 rounded-[2rem] border border-ink/10 hover:bg-mulberry hover:border-mulberry hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-lg cursor-pointer"
+                    className="
+                      group block min-w-[85%] sm:min-w-[70%] lg:min-w-0 snap-center
+                      bg-white/60 backdrop-blur-sm p-8 rounded-[2rem]
+                      border border-ink/10 hover:bg-mulberry hover:border-mulberry
+                      hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-lg cursor-pointer
+                    "
                   >
-                    <div className="flex justify-between items-start mb-6">
-                      <h4 className="text-2xl font-serif text-ink group-hover:text-cream transition-colors duration-500">
-                        Bloom Plan
+                    <div className="flex justify-between items-start gap-4 mb-4">
+                      <h4 className="text-xl font-serif text-ink group-hover:text-cream transition-colors duration-500">
+                        {item.title}
                       </h4>
-                      <span className="text-mulberry group-hover:text-cream font-medium text-xl transition-colors duration-500">
-                        $80
-                        <span className="text-sm text-ink/50 group-hover:text-cream/70 transition-colors duration-500">
-                          /m
-                        </span>
+                      <span className="text-mulberry group-hover:text-cream transition-colors duration-500 font-medium text-xl whitespace-nowrap">
+                        {item.price}
                       </span>
                     </div>
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
-                        <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>Everything in Basic</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
-                        <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>SEO Updates</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
-                        <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>Content & Web updates</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-sm text-ink/80 group-hover:text-cream/90 transition-colors duration-500">
-                        <CheckCircle2 size={18} className="shrink-0 mt-0.5 text-sage group-hover:text-blush transition-colors duration-500" />
-                        <span>Up to 1 new page created per month</span>
-                      </li>
-                    </ul>
-                  </Link>
-                </div>
-              </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <h3 className="text-3xl font-serif text-ink mb-8 flex items-center gap-4">
-                  <span className="w-8 h-[1px] bg-mulberry"></span>
-                  One Offs
-                </h3>
-                <Link
-                  to="/contact"
-                  className="group block bg-white/60 backdrop-blur-sm p-8 rounded-[2rem] border border-ink/10 hover:bg-mulberry hover:border-mulberry hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-lg cursor-pointer"
-                >
-                  <ul className="space-y-6">
-                    <li className="flex justify-between items-center border-b border-ink/5 group-hover:border-cream/10 transition-colors duration-500 pb-6 last:border-0 last:pb-0">
-                      <div>
-                        <h4 className="text-xl font-serif text-ink group-hover:text-cream transition-colors duration-500 mb-1">
-                          Content Upgrade
-                        </h4>
-                        <p className="text-sm text-ink/60 group-hover:text-cream/70 transition-colors duration-500 font-light">
-                          Refine and enhance your website’s content for clarity, professionalism, and stronger customer engagement.
-                        </p>
-                      </div>
-                      <span className="text-mulberry group-hover:text-cream transition-colors duration-500 font-medium text-xl">
-                        $45
-                      </span>
-                    </li>
-                    <li className="flex justify-between items-center border-b border-ink/5 group-hover:border-cream/10 transition-colors duration-500 pb-6 last:border-0 last:pb-0">
-                      <div>
-                        <h4 className="text-xl font-serif text-ink group-hover:text-cream transition-colors duration-500 mb-1">
-                          Visual Upgrade
-                        </h4>
-                        <p className="text-sm text-ink/60 group-hover:text-cream/70 transition-colors duration-500 font-light">
-                          Enhance your visuals with refined, high-quality imagery that elevates your brand.
-                        </p>
-                      </div>
-                      <span className="text-mulberry group-hover:text-cream transition-colors duration-500 font-medium text-xl">
-                        $60
-                      </span>
-                    </li>
-                    <li className="flex justify-between items-center border-b border-ink/5 group-hover:border-cream/10 transition-colors duration-500 pb-6 last:border-0 last:pb-0">
-                      <div>
-                        <h4 className="text-xl font-serif text-ink group-hover:text-cream transition-colors duration-500 mb-1">
-                          New Page
-                        </h4>
-                        <p className="text-sm text-ink/60 group-hover:text-cream/70 transition-colors duration-500 font-light">
-                          Custom design and development of an additional page tailored to your brand.
-                        </p>
-                      </div>
-                      <span className="text-mulberry group-hover:text-cream transition-colors duration-500 font-medium text-xl">
-                        $200
-                      </span>
-                    </li>
-                  </ul>
-                </Link>
-              </motion.div>
-            </div>
+                    <p className="text-sm text-ink/60 group-hover:text-cream/70 transition-colors duration-500 font-light leading-relaxed">
+                      {item.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 
