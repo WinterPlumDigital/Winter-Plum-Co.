@@ -412,7 +412,14 @@ export function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            className="
+            flex gap-6
+            overflow-x-auto lg:overflow-visible
+            snap-x snap-mandatory lg:snap-none
+            pb-4 lg:pb-0
+            "
+          >
             {[
               {
                 title: "Website Design",
@@ -436,7 +443,13 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="bg-mulberry-dark/30 border border-[#F7E7CE]/40 p-10 rounded-[2rem] hover:bg-mulberry-dark/50 hover:border-[#F7E7CE]/70 transition-all duration-500 group"
+                className="
+                  min-w-[85%] sm:min-w-[70%] lg:min-w-0 lg:flex-1 snap-center
+                  bg-mulberry-dark/30 border border-[#F7E7CE]/40
+                  p-8 lg:p-10 rounded-[2rem]
+                  hover:bg-mulberry-dark/50 hover:border-[#F7E7CE]/70
+                  transition-all duration-500 group
+                "
               >
                 <div className="w-16 h-16 rounded-2xl bg-blush/10 flex items-center justify-center text-blush mb-8 group-hover:scale-110 transition-transform">
                   {service.icon}
