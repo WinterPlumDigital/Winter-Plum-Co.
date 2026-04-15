@@ -242,11 +242,11 @@ export function Home() {
           <motion.div
             style={{ rotateY, transformStyle: "preserve-3d" }}
             className="
-              flex gap-6 items-stretch
-              overflow-x-auto lg:overflow-visible
-              snap-x snap-mandatory lg:snap-none
-              pb-4 lg:pb-0
-              lg:flex-row
+            flex gap-6 items-stretch
+            overflow-x-auto lg:overflow-visible
+            snap-x snap-mandatory lg:snap-none
+            pt-4 pb-4 lg:pb-0
+            lg:flex-row
             "
           >
             {packages.map((pkg, index) => {
